@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="تم تأكيد الاشتراك بنجاح - برنامج سنة أولى برمجة | نبراس"
+    />
+
+    <!-- Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1f979a",
+              secondary: "#f6ae20",
+              brand: "#333f4c",
+            },
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <title>تم الاشتراك بنجاح! | نبراس</title>
+  </head>
+
+  <body
+    class="font-cairo text-brand bg-[#F8FAFC] min-h-screen py-10 md:py-16 flex flex-col items-center justify-center px-4"
+  >
+    <!-- ── Main Card Container ── -->
+    <main
+      class="bg-white border border-[#E2E8F0] rounded-[32px] shadow-xl p-8 md:p-14 max-w-[850px] w-full text-center my-auto"
+      data-aos="zoom-in"
+      data-aos-duration="600"
+    >
+      <!-- ── Success Check Icon ── -->
+      <div
+        class="w-20 h-20 bg-[#DCFCE7] rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm"
+        data-aos="scale-up"
+        data-aos-delay="200"
+      >
+        <svg
+          class="w-10 h-10 text-[#16A34A]"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="3"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      </div>
+
+      <!-- ── Header & Greeting ── -->
+      <h1
+        class="text-[#0F172A] text-[32px] md:text-[40px] font-extrabold mb-3 tracking-tight"
+      >
+        تم الاشتراك بنجاح!
+      </h1>
+      <p class="text-[#64748B] text-[16px] md:text-[18px] font-semibold mb-10 max-w-xl mx-auto">
+        مرحباً بك في رحلتك الجديدة، تم تفعيل اشتراكك السنوي في البرنامج التدريبي بنجاح.
+      </p>
+
+      <!-- ── Order / Invoice Details Box ── -->
+      <div
+        class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[24px] p-6 md:p-8 mb-8 text-right"
+      >
+        <!-- Header Info Row -->
+        <div class="flex items-center justify-between pb-5 border-b border-gray-200/80">
+          <div class="flex items-center gap-2">
+            <span class="text-[#64748B] font-bold text-[15px]">رقم الاشتراك:</span>
+            <span class="text-primary font-extrabold text-[16px] tracking-wide" dir="ltr">#ES-98421</span>
+          </div>
+          <div class="text-[#94A3B8] font-semibold text-[14px]">
+            بتاريخ: 23 أغسطس 2026
+          </div>
+        </div>
+
+        <!-- Details Rows -->
+        <div class="flex flex-col gap-4 py-5 border-b border-gray-200/80 text-[15px] md:text-[16px]">
+          <!-- Product -->
+          <div class="flex items-center justify-between">
+            <span class="text-[#64748B] font-bold">المنتج:</span>
+            <span class="text-[#0F172A] font-extrabold text-[16px] md:text-[17px]">
+              البرنامج التدريبي المتكامل (خريطة عالم البرمجة)
+            </span>
+          </div>
+          <!-- Duration -->
+          <div class="flex items-center justify-between">
+            <span class="text-[#64748B] font-bold">فترة الاشتراك:</span>
+            <span class="text-[#0F172A] font-extrabold text-[16px] md:text-[17px]">
+              سنة كاملة (12 شهر)
+            </span>
+          </div>
+          <!-- Payment Method -->
+          <div class="flex items-center justify-between">
+            <span class="text-[#64748B] font-bold">طريقة الدفع:</span>
+            <span class="text-[#0F172A] font-extrabold text-[16px] md:text-[17px]">
+              فيزا منتهية بـ **** 2424
+            </span>
+          </div>
+        </div>
+
+        <!-- Total Paid Row -->
+        <div class="flex items-center justify-between pt-5">
+          <span class="text-[#0F172A] font-extrabold text-[18px] md:text-[22px]">
+            المبلغ الإجمالي المدفوع
+          </span>
+          <span class="text-primary font-black text-[28px] md:text-[34px] flex items-baseline gap-1" dir="ltr">
+            2800 <span class="text-[18px] font-bold text-primary">ج.م</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- ── Instant Benefits Callout Box ── -->
+      <div
+        class="bg-[#EEFEFF] border border-[#1f979a]/30 rounded-[24px] p-6 md:p-8 mb-8 text-right"
+      >
+        <h2 class="text-primary font-extrabold text-[18px] md:text-[20px] mb-4">
+          مزايا تم تفعيلها فورياً في حسابك:
+        </h2>
+        <ul class="flex flex-col gap-3 text-[#333f4c] font-bold text-[15px] md:text-[16px]">
+          <li class="flex items-center gap-3">
+            <span class="text-secondary font-black text-[20px] shrink-0">✓</span>
+            <span>الوصول الكامل لمنصة التعليم ومقاطع الفيديو التدريبية</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-secondary font-black text-[20px] shrink-0">✓</span>
+            <span>تذكرة ذهبية (Golden Ticket) لحضور الإيفنتات في المقر</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-secondary font-black text-[20px] shrink-0">✓</span>
+            <span>عضوية مجتمع المبرمجين العرب الحصري للمشتركين</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── Email Notice ── -->
+      <div
+        class="flex items-center justify-center gap-2 text-[#64748B] text-[14px] md:text-[15px] font-semibold mb-8"
+      >
+        <svg
+          class="w-5 h-5 text-[#64748B] shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+        <span>تم إرسال فاتورة الاشتراك ودليل بدء التعلم إلى بريدك الإلكتروني المسجل.</span>
+      </div>
+
+      <!-- ── Action Buttons ── -->
+      <div class="flex flex-col items-center gap-4">
+        <!-- Start Course Button -->
+        <a
+          href="index.html"
+          class="w-full max-w-[480px] bg-primary hover:bg-primary/90 text-white font-extrabold text-[20px] md:text-[22px] py-4 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3"
+        >
+          <svg
+            class="w-6 h-6 fill-current"
+            viewBox="0 0 24 24"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <span>ابدأ الكورس الآن</span>
+        </a>
+
+        <!-- My Account Link -->
+        <a
+          href="index.html"
+          class="text-primary hover:text-primary/80 hover:underline font-bold text-[17px] transition-colors"
+        >
+          الذهاب إلى حسابي الشخصي
+        </a>
+      </div>
+    </main>
+
+    <!-- ── Bottom Social Proof ── -->
+    <div
+      class="mt-8 text-center"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <!-- Avatars Row -->
+      <div class="flex items-center justify-center -space-x-2 space-x-reverse mb-3">
+        <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden shadow-sm">
+          <img src="./images/success-story.jpg" alt="Student avatar" class="w-full h-full object-cover" />
+        </div>
+        <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden shadow-sm">
+          <img src="./images/eng-mustafa.jpg" alt="Student avatar" class="w-full h-full object-cover" />
+        </div>
+        <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden shadow-sm">
+          <img src="./images/story-img.jpg" alt="Student avatar" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <p class="text-[#94A3B8] font-semibold text-[14px] md:text-[15px]">
+        انضممت لأكثر من 2000 مشترك نشط هذا الشهر
+      </p>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true });
+    </script>
+  </body>
+</html>

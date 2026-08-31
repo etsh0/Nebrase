@@ -1,0 +1,2526 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="دليلك الأقوى في سنة 2026 عشان تتعلم أساسيات البرمجة في 30 يوم"
+    />
+
+    <!-- Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1f979a",
+              secondary: "#f6ae20",
+              brand: "#333f4c",
+            },
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <title>نبراس | تعلم البرمجة في 30 يوم</title>
+  </head>
+
+  <body class="font-cairo text-brand bg-white overflow-x-hidden">
+    <!-- ========== HEADER ========== -->
+    <header
+      id="main-header"
+      class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[1100px] rounded-3xl border border-[#E7E4E4] glass-header"
+    >
+      <div
+        class="flex items-center justify-between h-[68px] max-w-[1200px] mx-auto px-4 md:px-8"
+      >
+        <!-- Right: Logo -->
+        <a
+          href="#"
+          aria-label="نبراس - الصفحة الرئيسية"
+          class="text-2xl font-extrabold text-primary tracking-tight w-[130px]"
+        >
+          <img
+            class="max-w-full"
+            src="./images/nebrase-logo.png"
+            alt="nebrse logo"
+          />
+        </a>
+
+        <!-- Center: Desktop Nav -->
+        <nav aria-label="القائمة الرئيسية" class="hidden md:block">
+          <ul class="flex items-center gap-9">
+            <li>
+              <a
+                href="#stages"
+                class="relative text-[0.95rem] font-semibold text-brand hover:text-primary transition-colors duration-300 group"
+              >
+                المراحل
+                <span
+                  class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"
+                ></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#golden"
+                class="relative text-[0.95rem] font-semibold text-brand hover:text-primary transition-colors duration-300 group"
+              >
+                الجولدن تيكت
+                <span
+                  class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"
+                ></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#faq"
+                class="relative text-[0.95rem] font-semibold text-brand hover:text-primary transition-colors duration-300 group"
+              >
+                أسئلة
+                <span
+                  class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"
+                ></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Left: Desktop & Mobile CTA + Hamburger -->
+        <div class="flex items-center gap-2 md:gap-4">
+          <a
+            href="checkout.html"
+            class="inline-block px-4 md:px-7 py-2 md:py-2.5 bg-primary text-white text-xs md:text-sm font-bold rounded-full hover:bg-[#178285] transition-all duration-300 shadow-sm shrink-0"
+          >
+            سجل الآن
+          </a>
+
+          <!-- Hamburger (mobile only) -->
+          <button
+            id="hamburger-btn"
+            class="md:hidden flex flex-col gap-[5px] p-2 rounded-lg hover:bg-primary/10 transition-colors duration-300"
+            aria-label="فتح القائمة"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span
+              class="hamburger-line block w-6 h-0.5 bg-brand rounded"
+            ></span>
+            <span
+              class="hamburger-line block w-6 h-0.5 bg-brand rounded"
+            ></span>
+            <span
+              class="hamburger-line block w-6 h-0.5 bg-brand rounded"
+            ></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav
+        id="mobile-menu"
+        class="md:hidden border-t border-primary/10"
+        aria-hidden="true"
+      >
+        <ul class="flex flex-col items-center gap-1 px-6 py-4 pb-5">
+          <li>
+            <a
+              href="#stages"
+              class="block w-full text-center py-2.5 px-4 text-base font-semibold text-brand hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-300"
+            >
+              المراحل
+            </a>
+          </li>
+          <li>
+            <a
+              href="#golden"
+              class="block w-full text-center py-2.5 px-4 text-base font-semibold text-brand hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-300"
+            >
+              الجولدن تيكت
+            </a>
+          </li>
+          <li>
+            <a
+              href="#faq"
+              class="block w-full text-center py-2.5 px-4 text-base font-semibold text-brand hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-300"
+            >
+              أسئلة
+            </a>
+          </li>
+          <li class="w-full mt-2">
+            <a
+              href="checkout.html"
+              class="block w-full text-center py-3 px-7 bg-primary text-white font-bold rounded-full hover:bg-[#178285] transition-all duration-300"
+            >
+              سجل الآن
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main>
+      <!-- ========== HERO SECTION ========== -->
+      <section
+        id="hero"
+        class="pt-[132px] pb-16 bg-white text-center"
+        aria-labelledby="hero-title"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Title -->
+          <h1
+            id="hero-title"
+            class="text-[clamp(1.6rem,4vw,2.5rem)] font-bold text-primary leading-[1.45] mb-[10px]"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            دليلك الأقوى في سنة 2026 عشان تتعلم أساسيات البرمجة في
+            <span class="text-secondary">30 يوم</span>
+          </h1>
+
+          <!-- Description -->
+          <p
+            class="text-[clamp(0.9rem,2vw,1rem)] text-brand max-w-[680px] mx-auto mb-[52px] leading-[1.9]"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="150"
+          >
+            ازاي تبدأ البرمجة من الصفر، حتى لو متعرفش يعني إيه كمبيوتر، وتفهم
+            أساسياتها، وتكتشف عالمها، وتختار اللغة المناسبة ليك، لحد ما تتحول من
+            شخص تايه ومش عارف تبدأ منين وخبرته صفر، لشخص البرمجة بالنسباله كتاب
+            مفتوح في 30 يوم.
+          </p>
+
+          <!-- Hero Image -->
+          <div
+            class="flex justify-center mb-[72px]"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="250"
+          >
+            <img
+              src="./images/Hero-img.png"
+              alt="مدرب يشرح لمجموعة من الطلاب في قاعة تدريبية"
+              class="hero-image w-[290px] max-w-full rounded-2xl"
+            />
+          </div>
+
+          <!-- CTA Button -->
+          <div
+            class="flex justify-center gap-4"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="350"
+          >
+            <a
+              href="checkout.html"
+              class="inline-flex items-center justify-center gap-2.5 py-3 px-6 sm:px-12 md:px-20 bg-primary text-white text-[18px] sm:text-[20px] md:text-[24px] font-bold rounded-[32px] bg-[#178285] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto text-center"
+            >
+              ابدأ رحلتك في البرمجة الان
+              <span aria-hidden="true">
+                <img src="./images/icons/rocket-icon.svg" alt="" />
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== VIDEO SECTION ========== -->
+      <section
+        id="video"
+        class="pb-20 bg-white text-center"
+        aria-labelledby="video-title"
+      >
+        <div class="w-full max-w-[900px] mx-auto px-6">
+          <h2
+            id="video-title"
+            class="text-[clamp(1.2rem,3vw,1.6rem)] font-bold text-primary mb-10"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            شاهد هذا الفيديو للمعرفة على المزيد
+          </h2>
+
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl max-w-[820px] mx-auto bg-black"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="150"
+          >
+            <video
+              class="w-full block aspect-video object-cover"
+              controls
+              poster="./images/Hero-img.png"
+              aria-label="فيديو تعريفي عن برنامج تعلم البرمجة في 30 يوم"
+            >
+              <source src="#" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== STORY SECTION ========== -->
+      <section
+        id="story"
+        class="py-20 bg-[#F0F7FF]"
+        aria-labelledby="story-title"
+      >
+        <div class="w-full max-w-[960px] mx-auto px-6">
+          <!-- Badge -->
+          <div
+            class="flex justify-center mb-5"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <span
+              class="inline-block px-5 py-1.5 bg-primary text-white text-sm font-semibold rounded-full"
+            >
+              قصة النجاح
+            </span>
+          </div>
+
+          <!-- Section Title -->
+          <h2
+            id="story-title"
+            class="text-[clamp(1.6rem,4vw,2.4rem)] font-bold text-primary text-center mb-10"
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="100"
+          >
+            قصة المهندس مصطفى محفوظ
+          </h2>
+
+          <!-- Content Card -->
+          <div
+            class="bg-white rounded-2xl p-8 md:p-10 shadow-sm grid grid-cols-1 md:grid-cols-[220px_1fr] gap-8 items-center"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="150"
+          >
+            <!-- Right Col: Profile Photo -->
+            <div
+              class="flex justify-center md:justify-start items-start"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              <div class="relative w-[200px] h-[200px] rounded-full shrink-0">
+                <!-- Gold ring -->
+                <div
+                  class="absolute inset-0 rounded-full border-[5px] border-secondary scale-110"
+                ></div>
+                <img
+                  src="./images/eng-mustafa.jpg"
+                  alt="صورة المهندس مصطفى محفوظ"
+                  class="w-full h-full object-cover rounded-full relative z-10"
+                />
+              </div>
+            </div>
+
+            <!-- Left Col: Text Content -->
+            <div class="flex flex-col gap-6">
+              <!-- Sub-title -->
+              <h3 class="text-xl font-bold text-secondary">
+                مين المهندس مصطفى محفوظ؟
+              </h3>
+
+              <!-- Description -->
+              <p class="text-brand leading-[1.85] text-[0.95rem]">
+                انا مهندس مصطفى محفوظ، بقالي 10 سنين شغال في البرمجة. حالياً
+                صاحب شركة برمجيات ليها 3 فروع وشغال فيها اكتر من 15 موظف.
+              </p>
+
+              <!-- Stat Cards -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <!-- Stat: عميل -->
+                <div
+                  class="bg-[#F6AE2015] rounded-[16px] p-4 flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <p
+                      class="text-primary font-extrabold text-[18px] leading-tight"
+                    >
+                      +150 عميل
+                    </p>
+                    <p class="text-[14px] text-[#64748B] mt-[2px]">مستمرين</p>
+                  </div>
+                  <div
+                    class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shrink-0"
+                  >
+                    <img src="./images/icons/user-round.svg" alt="" />
+                  </div>
+                </div>
+
+                <!-- Stat: متدرب -->
+                <div
+                  class="bg-[#F6AE2015] rounded-[16px] p-4 flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <p
+                      class="text-primary font-extrabold text-[18px] leading-tight whitespace-nowrap"
+                    >
+                      +20000 متدرب
+                    </p>
+                    <p class="text-[14px] text-[#64748B] mt-[2px]">
+                      في المؤسسة
+                    </p>
+                  </div>
+                  <div
+                    class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shrink-0"
+                  >
+                    <img src="./images/icons/users-round.svg" alt="" />
+                  </div>
+                </div>
+                <!-- Stat: جهة عمل -->
+                <div
+                  class="bg-[#F6AE2015] rounded-[16px] p-4 flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <p
+                      class="text-primary font-extrabold text-[18px] leading-tight whitespace-nowrap"
+                    >
+                      +50 جهة عمل
+                    </p>
+                    <p class="text-[14px] text-[#64748B] mt-[2px]">
+                      تعاونت معاهم
+                    </p>
+                  </div>
+                  <div
+                    class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shrink-0"
+                  >
+                    <img src="./images/icons/building-2.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote Block -->
+              <blockquote class="bg-primary rounded-2xl p-6">
+                <p class="text-white text-[0.95rem] leading-[1.95] font-medium">
+                  يعني كل كلمة هقولهالك انا اتعلمتها بالطريقة الصعبة ودفعت من
+                  فلوسي ووقتي ومجهودي عشان اتعلمها، يعني مش كلام نظري مالوش
+                  علاقة بسوق العمل.. لأ دا جاي من تعاملي مع أكتر من 50 جهة عملنا
+                  تعاون معاها و150 عميل و حوالي 20 ألف شخص أتدربوا عندي في
+                  المؤسسة.
+                </p>
+                <footer class="mt-4 text-left">
+                  <cite class="text-secondary font-bold text-sm not-italic"
+                    >- مصطفى محفوظ</cite
+                  >
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== WHY FUNDAMENTALS SECTION ========== -->
+      <section
+        class="mt-[72px]"
+        id="why-fundamentals"
+        aria-labelledby="why-fundamentals-title"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Top Banner -->
+          <div
+            class="bg-primary py-6 md:py-8 px-6 md:px-10 text-center rounded-[16px] mb-12"
+          >
+            <div class="mx-auto" data-aos="fade-up" data-aos-duration="700">
+              <h2
+                id="why-fundamentals-title"
+                class="text-[22px] sm:text-[28px] md:text-[36px] font-bold text-white mb-4 leading-snug"
+              >
+                كنت دايماً بحس إن فيه حاجة ناقصة بس مش عارف إيه هي؟
+              </h2>
+              <p
+                class="text-white/80 text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed"
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay="120"
+              >
+                مع السنين اكتشفت إني كنت ممكن اوفر الكلام دا كله لو اتعلمت
+                <span class="text-secondary font-semibold">"الأساسيات"</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Cards Area -->
+          <div class="bg-white py-6 md:py-12">
+            <div>
+              <div class="flex flex-col gap-[36px] md:gap-[52px] items-stretch">
+                <div class="flex flex-col lg:flex-row items-center gap-6">
+                  <!-- Card 1: لو اتعلمت الأساسيات -->
+                  <div
+                    class="w-full flex-1 bg-[#EEFEFF] rounded-[24px] border border-[#C0C0C0] shadow-sm py-6 px-6"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                    data-aos-delay="150"
+                  >
+                    <!-- Card Title -->
+                    <h3
+                      class="text-[22px] md:text-[28px] font-bold text-secondary mb-5 flex items-center gap-2"
+                    >
+                      <div
+                        aria-hidden="true"
+                        class="w-10 h-10 bg-[#FFF7E0] flex justify-center items-center rounded-full shrink-0"
+                      >
+                        <img src="./images/icons/bow-arrow.svg" alt="" />
+                      </div>
+                      <span>لو اتعلمت الأساسيات</span>
+                    </h3>
+
+                    <!-- List -->
+                    <ul class="flex flex-col gap-4 md:gap-6" role="list">
+                      <li class="flex items-start gap-2">
+                        <span
+                          class="text-secondary font-extrabold text-[22px] md:text-[24px] mt-0.5 shrink-0"
+                          aria-hidden="true"
+                          >›</span
+                        >
+                        <p
+                          class="text-[#000000] text-[16px] md:text-[18px] font-semibold leading-relaxed"
+                        >
+                          كانت أكبر مشكلة هاتواجهني كنت هعرف الاقيلها حل بسهولة.
+                        </p>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span
+                          class="text-secondary font-extrabold text-[22px] md:text-[24px] mt-0.5 shrink-0"
+                          aria-hidden="true"
+                          >›</span
+                        >
+                        <p
+                          class="text-[#000000] text-[16px] md:text-[18px] font-semibold leading-relaxed"
+                        >
+                          لإني هعرف اسأل السؤال الصح وطالما سألت السؤال الصح
+                          هوصل للإجابة في أسرع وقت..
+                        </p>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span
+                          class="text-secondary font-extrabold text-[22px] md:text-[24px] mt-0.5 shrink-0"
+                          aria-hidden="true"
+                          >›</span
+                        >
+                        <p
+                          class="text-[#000000] text-[16px] md:text-[18px] font-semibold leading-relaxed"
+                        >
+                          غياب الأساسيات عندي كان بيخليني احل المشاكل بالطريقة
+                          الصعبة وانا مش عارف.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Decorative Dashed Arrow (hidden on mobile) -->
+                  <div
+                    class="hidden lg:flex shrink-0 items-start justify-center pt-2"
+                    aria-hidden="true"
+                    data-aos="fade-right"
+                    data-aos-duration="900"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="./images/icons/Vector 1.svg"
+                      alt=""
+                      class="w-[300px] xl:w-[386px]"
+                    />
+                  </div>
+                </div>
+                <!-- Card 2: مثال بسيط-->
+                <div
+                  class="w-full max-w-[798px] lg:self-end bg-[#EEFEFF] rounded-[24px] border border-[#C0C0C0] shadow-sm py-6 px-6"
+                  data-aos="fade-up"
+                  data-aos-duration="700"
+                  data-aos-delay="150"
+                >
+                  <!-- Card Title -->
+                  <h3
+                    class="text-[22px] md:text-[28px] font-bold text-secondary mb-5 flex items-center gap-2"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="w-10 h-10 bg-[#FFF7E0] flex justify-center items-center rounded-full shrink-0"
+                    >
+                      <img src="./images/icons/pen-line.svg" alt="" />
+                    </div>
+                    <span>مثال بسيط</span>
+                  </h3>
+
+                  <!-- List -->
+                  <ul class="flex flex-col gap-4 md:gap-6" role="list">
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="text-secondary font-extrabold text-[22px] md:text-[24px] mt-0.5 shrink-0"
+                        aria-hidden="true"
+                        >›</span
+                      >
+                      <p
+                        class="text-[#000000] text-[16px] md:text-[18px] font-semibold leading-relaxed"
+                      >
+                        تخيل كدا تبقى عايز تروح اسكندرية، فتروح المحطة وتسال عن
+                        تذاكر فيقولك لأ مفيش تذاكر دلوقتي واقرب ميعاد الأسبوع
+                        الجاي فتضطر تنتظر..
+                      </p>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="text-secondary font-extrabold text-[22px] md:text-[24px] mt-0.5 shrink-0"
+                        aria-hidden="true"
+                        >›</span
+                      >
+                      <p
+                        class="text-[#000000] text-[16px] md:text-[18px] font-semibold leading-relaxed"
+                      >
+                        الطريقتين هايوصلوك ولكن دي هاتوصلك في ساعتين ودي هتاخد
+                        منك أسبوع!
+                      </p>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="text-secondary font-extrabold text-[22px] md:text-[24px] mt-0.5 shrink-0"
+                        aria-hidden="true"
+                        >›</span
+                      >
+                      <p
+                        class="text-[#000000] text-[16px] md:text-[18px] font-semibold leading-relaxed"
+                      >
+                        مع ان الحل كان سهل.. تروح موقف اسكندرية.. تركب فوراً
+                        وساعتين تكون وصلت!
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== COMMON PROBLEMS SECTION ========== -->
+      <section
+        id="common-problems"
+        class="mt-[72px]"
+        aria-labelledby="common-problems-title"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Banner -->
+          <div
+            class="bg-primary py-6 md:py-8 px-6 md:px-10 text-center rounded-[16px] mb-12"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <h2
+              id="common-problems-title"
+              class="text-[20px] sm:text-[26px] md:text-[34px] font-bold text-white leading-[1.6]"
+            >
+              لذلك لما قابلت متدربين كتير عندي في الشركة اكتشفت إن عندهم نفس
+              المشكلة وشوية أوهام تانية:
+            </h2>
+          </div>
+
+          <!-- Problems List -->
+          <div class="flex flex-col divide-y divide-gray-100">
+            <!-- Item 1 -->
+            <div
+              class="flex items-start gap-4 md:gap-6 py-6 md:py-8"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="100"
+            >
+              <div
+                class="w-[44px] h-[44px] md:w-[52px] md:h-[52px] rounded-full bg-[#FFF7E0] flex items-center justify-center shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 md:w-6 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V17H6C4.89543 17 4 17.8954 4 19ZM4 19C4 20.1046 4.89543 21 6 21H20M9 7H15M9 11H15"
+                    stroke="#F6AE20"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-brand text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed flex-1 text-right"
+              >
+                اللي بيقولي انا أخدت كورس جافا ومفهمتمش حاجة وبيعتقد إن ذكاءه
+                محدود وإنه مش هاينفع في البرمجة..
+              </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+              class="flex items-start gap-4 md:gap-6 py-6 md:py-8"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="150"
+            >
+              <div
+                class="w-[44px] h-[44px] md:w-[52px] md:h-[52px] rounded-full bg-primary flex items-center justify-center shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 md:w-6 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5843 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6643 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.258 9.77251 19.9887C9.5799 19.7194 9.31074 19.5143 9 19.4C8.69838 19.2669 8.36381 19.2272 8.03941 19.286C7.71502 19.3448 7.41568 19.4995 7.18 19.73L7.12 19.79C6.93425 19.976 6.71368 20.1235 6.47088 20.2241C6.22808 20.3248 5.96783 20.3766 5.705 20.3766C5.44217 20.3766 5.18192 20.3248 4.93912 20.2241C4.69632 20.1235 4.47575 19.976 4.29 19.79C4.10405 19.6043 3.95653 19.3837 3.85588 19.1409C3.75523 18.8981 3.70343 18.6378 3.70343 18.375C3.70343 18.1122 3.75523 17.8519 3.85588 17.6091C3.95653 17.3663 4.10405 17.1457 4.29 16.96L4.35 16.9C4.58054 16.6643 4.73519 16.365 4.794 16.0406C4.85282 15.7162 4.81312 15.3816 4.68 15.08C4.55324 14.7842 4.34276 14.532 4.07447 14.3543C3.80618 14.1766 3.49179 14.0813 3.17 14.08H3C2.46957 14.08 1.96086 13.8693 1.58579 13.4942C1.21071 13.1191 1 12.6104 1 12.08C1 11.5496 1.21071 11.0409 1.58579 10.6658C1.96086 10.2907 2.46957 10.08 3 10.08H3.09C3.42099 10.0723 3.742 9.96512 4.0113 9.77251C4.28059 9.5799 4.48572 9.31074 4.6 9C4.73312 8.69838 4.77282 8.36381 4.714 8.03941C4.65519 7.71502 4.50054 7.41568 4.27 7.18L4.21 7.12C4.02405 6.93425 3.87653 6.71368 3.77588 6.47088C3.67523 6.22808 3.62343 5.96783 3.62343 5.705C3.62343 5.44217 3.67523 5.18192 3.77588 4.93912C3.87653 4.69632 4.02405 4.47575 4.29 19.79C4.10405 19.6043 3.95653 19.3837 3.85588 19.1409C3.75523 18.8981 3.70343 18.6378 3.70343 18.375C3.70343 18.1122 3.75523 17.8519 3.85588 17.6091C3.95653 17.3663 4.10405 17.1457 4.29 16.96L4.35 16.9C4.58054 16.6643 4.73519 16.365 4.794 16.0406C4.85282 15.7162 4.81312 15.3816 4.68 15.08C4.55324 14.7842 4.34276 14.532 4.07447 14.3543C3.80618 14.1766 3.49179 14.0813 3.17 14.08H3C2.46957 14.08 1.96086 13.8693 1.58579 13.4942C1.21071 13.1191 1 12.6104 1 12.08C1 11.5496 1.21071 11.0409 1.58579 10.6658C1.96086 10.2907 2.46957 10.08 3 10.08H3.09C3.42099 10.0723 3.742 9.96512 4.0113 9.77251C4.28059 9.5799 4.48572 9.31074 4.6 9C4.73312 8.69838 4.77282 8.36381 4.714 8.03941C4.65519 7.71502 4.50054 7.41568 4.27 7.18L4.21 7.12C4.02405 6.93425 3.87653 6.71368 3.77588 6.47088C3.67523 6.22808 3.62343 5.96783 3.62343 5.705C3.62343 5.44217 3.67523 5.18192 3.77588 4.93912C3.87653 4.69632 4.02405 4.47575 4.29 19.71L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-brand text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed flex-1 text-right"
+              >
+                واللي لاقيه دارس تخصص ولكن عند مشاكل بسيطة بيعطل! مع ان المفروض
+                دي هتبقى أساسيات مابينفعش فيها الغلط.!!
+              </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+              class="flex items-start gap-4 md:gap-6 py-6 md:py-8"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="200"
+            >
+              <div
+                class="w-[44px] h-[44px] md:w-[52px] md:h-[52px] rounded-full bg-[#334155] flex items-center justify-center shrink-0 mt-1"
+              >
+                <svg
+                  class="w-5 h-5 md:w-6 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 2V6M12 18V22M2 12H6M18 12H22"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-brand text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed flex-1 text-right"
+              >
+                واخيراً الشخص اللي بيبقى دايماً حاسس انه تايه ومش فاهم حاجة ومش
+                عارف يبدأ منين..
+              </p>
+            </div>
+
+            <!-- Item 4 -->
+            <div
+              class="flex items-start gap-4 md:gap-6 py-6 md:py-8"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="250"
+            >
+              <div
+                class="w-[52px] h-[52px] rounded-full bg-[#FFF7E0] flex items-center justify-center shrink-0"
+              >
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="18"
+                    cy="5"
+                    r="3"
+                    stroke="#F6AE20"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="6"
+                    cy="12"
+                    r="3"
+                    stroke="#F6AE20"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="18"
+                    cy="19"
+                    r="3"
+                    stroke="#F6AE20"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M8.59 13.51L15.42 17.49M15.41 6.51L8.59 10.49"
+                    stroke="#F6AE20"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-brand text-[20px] font-semibold leading-relaxed flex-1"
+              >
+                اللي يختار مسار غلط، مع ان فيه مسار تاني ليه أكتر وهايكسبه فلوس
+                أحسن، فيضطر يبدأ من جديد.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== World of Programming Map ========== -->
+      <section class="my-[92px]">
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Banner -->
+          <div
+            class="bg-primary py-6 md:py-8 px-6 md:px-10 text-center rounded-[16px] mb-12"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <p
+              class="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-white mb-[10px] leading-relaxed"
+            >
+              عشان كدا قررت اعملك برنامج تدريبي تاسيسي بيبدأ معاك من الصفر (من
+              تحت الصفر كمان) عشان متقعش في الغلط اللي انا وقعت فيه وماتخسرش وقت
+              وتحرق طاقة، يخلوك تخسر فلوس وتكره البرمجة، واللي المفروض تتعلمه في
+              شهرين ياخد منك سنتين تلاتة!!
+            </p>
+            <h2
+              id="common-problems-title"
+              class="text-[22px] sm:text-[26px] md:text-[32px] font-bold text-white leading-[1.5]"
+            >
+              البرنامج انا سميته
+              <span class="text-secondary">"خريطة عالم البرمجة"</span> وهو عبارة
+              عن مسار بسيط مكثف مكون من4 مراحل رئيسية
+            </h2>
+          </div>
+          <!-- Cards Container (Sticky Stack) -->
+          <div class="stages-stack flex flex-col">
+            <!-- ── Card 1: مرحلة فك شفرة الكومبيوتر ── -->
+            <div class="stage-sticky">
+              <div
+                class="stage-card rounded-[20px] border border-[#C0C0C0] overflow-hidden shadow-md bg-[#000000]"
+              >
+                <!-- Card Body: Image + Content -->
+                <div
+                  class="flex flex-col-reverse lg:flex-row items-stretch min-h-[280px]"
+                >
+                  <!-- Content (right side in RTL = first in DOM) -->
+                  <div
+                    class="flex-1 py-6 md:py-8 px-6 md:px-10 flex flex-col justify-center gap-4 md:gap-5 text-right"
+                  >
+                    <!-- Phase Title -->
+                    <h3
+                      class="text-[22px] sm:text-[26px] md:text-[32px] font-bold text-secondary leading-snug"
+                    >
+                      مرحلة فك شفرة الكومبيوتر
+                    </h3>
+
+                    <!-- Description -->
+                    <p
+                      class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed"
+                    >
+                      المرحلة دي سميناها ألف باء برمجة لإنك دلوقتي بدأت تخش عالم
+                      البرمجة وبتتعرف عليها من البداية خالص..
+                    </p>
+
+                    <!-- What You'll Learn -->
+                    <div>
+                      <p
+                        class="text-secondary text-[18px] sm:text-[20px] md:text-[24px] font-bold mb-3"
+                      >
+                        هتتعلم فيها:
+                      </p>
+                      <ul class="flex flex-col gap-2" role="list">
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >تاريخ ومكونات الكمبيوتر (Hardware/Software)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >أسرار أنظمة التشغيل (OS)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >نظمة العد ولغة الآلة (Binary)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >والعلوم المرتبطة بعلوم الحاسب.</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Image (left side in RTL = last in DOM) -->
+                  <div
+                    class="w-full lg:w-[360px] h-[220px] sm:h-[260px] lg:h-auto shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/فك شفره الكمبيوتر.png"
+                      alt="مرحلة فك شفرة الكومبيوتر"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <!-- Card Footer: Congrats Banner -->
+                <div
+                  class="bg-[#EEFEFF] border-t border-[#C0C0C0] py-3 md:py-4 px-4 md:px-10 text-center"
+                >
+                  <p
+                    class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
+                  >
+                    ✅ مبروك انت كدا خلصت المرحلة الاولى وجاهز للمرحلة الثانيه
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Card 2: مرحلة  أ.. ب.. برمجة ── -->
+            <div class="stage-sticky">
+              <div
+                class="stage-card rounded-[20px] border border-[#C0C0C0] overflow-hidden shadow-md bg-[#000000]"
+              >
+                <!-- Card Body: Image + Content -->
+                <div
+                  class="flex flex-col-reverse lg:flex-row items-stretch min-h-[280px]"
+                >
+                  <!-- Content (right side in RTL = first in DOM) -->
+                  <div
+                    class="flex-1 py-6 md:py-8 px-6 md:px-10 flex flex-col justify-center gap-4 md:gap-5 text-right"
+                  >
+                    <!-- Phase Title -->
+                    <h3
+                      class="text-[22px] sm:text-[26px] md:text-[32px] font-bold text-secondary leading-snug"
+                    >
+                      مرحلة  أ.. ب.. برمجة
+                    </h3>
+
+                    <!-- Description -->
+                    <p
+                      class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed"
+                    >
+                      المرحلة دي سميناها ألف باء برمجة لإنك دلوقتي بدأت تخش عالم
+                      البرمجة وبتتعرف عليها من البداية خالص..
+                    </p>
+
+                    <!-- What You'll Learn -->
+                    <div>
+                      <p
+                        class="text-secondary text-[18px] sm:text-[20px] md:text-[24px] font-bold mb-3"
+                      >
+                        هتتعلم فيها:
+                      </p>
+                      <ul class="flex flex-col gap-2" role="list">
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >التفكير المنطقي وحل المشكلات (Flow Charts)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >واجهة الأوامر ( CLI )</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >أسرار قواعد البيانات (Databases) وأنواعها</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >وأساسيات الشبكات والإنترنت</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Image (left side in RTL = last in DOM) -->
+                  <div
+                    class="w-full lg:w-[360px] h-[220px] sm:h-[260px] lg:h-auto shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/أ ب برمجه.png"
+                      alt="مرحلة  أ.. ب.. برمجة"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <!-- Card Footer: Congrats Banner -->
+                <div
+                  class="bg-[#EEFEFF] border-t border-[#C0C0C0] py-3 md:py-4 px-4 md:px-10 text-center"
+                >
+                  <p
+                    class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
+                  >
+                    ✅ مبروك انت كدا خلصت المرحلة الثانيه وجاهز للمرحلة الثالثه
+                    ( ركز اوي )
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Card 3: مرحلة "خريطة عالم البرمجة" ── -->
+            <div class="stage-sticky">
+              <div
+                class="stage-card rounded-[20px] border border-[#C0C0C0] overflow-hidden shadow-md bg-[#000000]"
+              >
+                <!-- Card Body: Image + Content -->
+                <div
+                  class="flex flex-col-reverse lg:flex-row items-stretch min-h-[280px]"
+                >
+                  <!-- Content (right side in RTL = first in DOM) -->
+                  <div
+                    class="flex-1 py-6 md:py-8 px-6 md:px-10 flex flex-col justify-center gap-4 md:gap-5 text-right"
+                  >
+                    <!-- Phase Title -->
+                    <h3
+                      class="text-[22px] sm:text-[26px] md:text-[32px] font-bold text-secondary leading-snug"
+                    >
+                      مرحلة "خريطة عالم البرمجة"
+                    </h3>
+
+                    <!-- Description -->
+                    <p
+                      class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed"
+                    >
+                      المرحلة دي سميناها كدا لإن انت دلوقتي جاهز عشان تتعرف على
+                      كل المجالات اللي في البرمجة وجاهز إنك تختار منها وتعرف إيه
+                      المجال المناسب ليك ولقدراتك واللي يكسبك أحسن فلوس
+                    </p>
+
+                    <!-- What You'll Learn -->
+                    <div>
+                      <p
+                        class="text-secondary text-[18px] sm:text-[20px] md:text-[24px] font-bold mb-3"
+                      >
+                        هتتعلم فيها:
+                      </p>
+                      <ul class="flex flex-col gap-2" role="list">
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >هندسة البرمجيات (Client/Server, APIs)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >جولة تفصيلية في كل مجالات البرمجة (Web, Mobile, AI,
+                            Cyber Security, Data)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >والمعايير الـ 8 لاختيار مجالك الصح</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Image (left side in RTL = last in DOM) -->
+                  <div
+                    class="w-full lg:w-[360px] h-[220px] sm:h-[260px] lg:h-auto shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/خريطه عالم البرمجه.png"
+                      alt="خريطه عالم البرمجه"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <!-- Card Footer: Congrats Banner -->
+                <div
+                  class="bg-[#EEFEFF] border-t border-[#C0C0C0] py-3 md:py-4 px-4 md:px-10 text-center"
+                >
+                  <p
+                    class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
+                  >
+                    ✅ مبروك انت كدا خلصت سنة أولى برمجة بس لسة فاضل مرحلة مهمة
+                    جداً
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Card 4:  مرحلة المبرمج الذكي ── -->
+            <div class="stage-sticky">
+              <div
+                class="stage-card rounded-[20px] border border-[#C0C0C0] overflow-hidden shadow-md bg-[#000000]"
+              >
+                <!-- Card Body: Image + Content -->
+                <div
+                  class="flex flex-col-reverse lg:flex-row items-stretch min-h-[280px]"
+                >
+                  <!-- Content (right side in RTL = first in DOM) -->
+                  <div
+                    class="flex-1 py-6 md:py-8 px-6 md:px-10 flex flex-col justify-center gap-4 md:gap-5 text-right"
+                  >
+                    <!-- Phase Title -->
+                    <h3
+                      class="text-[22px] sm:text-[26px] md:text-[32px] font-bold text-secondary leading-snug"
+                    >
+                       مرحلة المبرمج الذكي
+                    </h3>
+
+                    <!-- Description -->
+                    <p
+                      class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-relaxed"
+                    >
+                      ماينفعش تكون مبرمج في عصر الـ Ai ماتكونش عارف هو الـ ai دا
+                      أصلا شغال ازاي لإنك هاتستخدمه في شغلك كتير جداً وهايوفر
+                      عليك مش أقل من 70% من وقتك، بس دا لو انت فاهمه.. ودا الرد
+                      على: الـ ai هاياخد مكانك كمبرمج، ودا حقيقي، ولكن هاياخد
+                      مكانك لو انت مش فاهم.. انما لو فاهم هايبقى بالنسبالك
+                      ترسانة أسلحة تحت إيدك تنجز بيها أي مشروع بسرعة البرق
+                    </p>
+
+                    <!-- What You'll Learn -->
+                    <div>
+                      <p
+                        class="text-secondary text-[18px] sm:text-[20px] md:text-[24px] font-bold mb-3"
+                      >
+                        هتتعلم فيها:
+                      </p>
+                      <ul class="flex flex-col gap-2" role="list">
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >مقدمة عن نماذج الذكاء الاصطناعي (LLMs)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >هندسة الأوامر (Prompt Engineering)</span
+                          >
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span
+                            class="text-secondary font-extrabold text-[20px] md:text-[24px] shrink-0 mt-0.5"
+                            aria-hidden="true"
+                            >›</span
+                          >
+                          <span
+                            class="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold"
+                            >وظاهرة الـ (Vibe Coding)</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Image (left side in RTL = last in DOM) -->
+                  <div
+                    class="w-full lg:w-[360px] h-[220px] sm:h-[260px] lg:h-auto shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/المبرمج الذكي.png"
+                      alt=" المبرمج الذكي"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <!-- Card Footer: Congrats Banner -->
+                <div
+                  class="bg-[#EEFEFF] border-t border-[#C0C0C0] py-3 md:py-4 px-4 md:px-10 text-center"
+                >
+                  <p
+                    class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
+                  >
+                    ✅مبروك انت دلوقتي اتخرجت، وبقيت عارف :
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Outcomes List (outside cards) ── -->
+          <ul
+            class="flex flex-col gap-4 mt-[52px]"
+            role="list"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <li class="flex items-center gap-[10px]">
+              <span
+                class="text-primary font-extrabold text-[24px] shrink-0"
+                aria-hidden="true"
+                >›</span
+              >
+              <span
+                class="text-[#000000] text-[20px] font-semibold leading-relaxed"
+              >
+                عارف الأساسيات اللي غيرك غالباً لسة مايعرفهاش وبيتوه فيها
+              </span>
+            </li>
+            <li class="flex items-center gap-[10px]">
+              <span
+                class="text-primary font-extrabold text-[24px] shrink-0"
+                aria-hidden="true"
+                >›</span
+              >
+              <span
+                class="text-[#000000] text-[20px] font-semibold leading-relaxed"
+              >
+                قادر تختار اللغة المناسبة ليك ولقدراتك واللي تكسبك أحسن فلوس في
+                أقل وقت ممكن
+              </span>
+            </li>
+            <li class="flex items-center gap-[10px]">
+              <span
+                class="text-primary font-extrabold text-[24px] shrink-0"
+                aria-hidden="true"
+                >›</span
+              >
+              <span
+                class="text-[#000000] text-[20px] font-semibold leading-relaxed"
+              >
+                فاهم عالم الذكاء الاصطناعي عشان تعرف تتعامل معاه بعد كدا ويعلي
+                من إنتاجيتك ويبقى صاحبك مش ضدك
+              </span>
+            </li>
+          </ul>
+          <!-- ── End Outcomes List ── -->
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           Section: Is This Course For You?
+           ══════════════════════════════════════════ -->
+      <section
+        id="course-fit"
+        class="my-10 md:my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- ── Top Banner ── -->
+          <div
+            class="bg-[#EEFEFF] border border-[#1f979a]/20 py-4 sm:py-5 px-4 sm:px-6 text-center rounded-[16px] shadow-sm"
+          >
+            <p
+              class="text-primary text-[17px] sm:text-[22px] md:text-[28px] lg:text-[32px] font-bold leading-relaxed mx-auto"
+            >
+              من الآخر انت دلوقتي البرمجة بقت بالنسبالك عالم مفتوح وبقيت زي
+              الصقر اللي شايف كل حاجة من فوق وعارف يحدد هدفه وازاي يوصله
+            </p>
+          </div>
+
+          <!-- ── Two-Column: For / Not For ── -->
+          <div class="py-8 md:py-14">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch"
+            >
+              <!-- ── Right col: الكورس دا ليك ── -->
+              <div class="flex flex-col">
+                <h3
+                  class="text-[#11CF00] text-[22px] sm:text-[26px] md:text-[34px] font-bold mb-4 md:mb-6 text-right"
+                >
+                  الكورس دا ليك لو انت :
+                </h3>
+                <div
+                  class="border border-[#11CF00]/30 rounded-[20px] p-5 sm:p-6 flex flex-col gap-4 bg-[#EEFEFF] h-full shadow-sm"
+                >
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#11CF00]/20 text-[#11CF00] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✓</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      لو عايز توفر على نفسك وقت والحاجة اللي كنت هاتتعلمها في
+                      شهر، تاخد منك سنة وفي الآخر بردو هاتضطر تتعلم الأساسيات
+                    </p>
+                  </div>
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#11CF00]/20 text-[#11CF00] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✓</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      ليك.. لو بتتعب وتزهق من زحمة وتعب المواصلات وعايز تدخل
+                      عالم الأونلاين وتحط رجلك صح على أول الطريق
+                    </p>
+                  </div>
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#11CF00]/20 text-[#11CF00] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✓</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      ليك.. لو عايز تتعلم أساسيات البرمجة (واحدة من أعلى
+                      المهارات اللي ممكن تكسبك فلوس)
+                    </p>
+                  </div>
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#11CF00]/20 text-[#11CF00] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✓</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      لو تايه ومش عارف تبدأ منين وشايف قدامك مليون كورس ولغات
+                      برمجة كتير مش عارف تختار منها ومش عارف إيه المناسب معاك
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── Left col: الكورس دا مش ليك ── -->
+              <div class="flex flex-col">
+                <h3
+                  class="text-[#c0392b] text-[22px] sm:text-[26px] md:text-[34px] font-bold mb-4 md:mb-6 text-right"
+                >
+                  الكورس دا مش ليك لو انت :
+                </h3>
+                <div
+                  class="border border-[#c0392b]/30 rounded-[20px] p-5 sm:p-6 flex flex-col gap-4 bg-[#EEFEFF] h-full shadow-sm"
+                >
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#c0392b]/15 text-[#c0392b] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✗</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      لو انت مستواك متقدم.. يشرفنا تنضم ولكن البرنامج مش موجه
+                      ليك
+                    </p>
+                  </div>
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#c0392b]/15 text-[#c0392b] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✗</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      لو انت هتاخد البرنامج التدريبي ومش هاتذاكره، يبقى حرام
+                      عليك الفلوس واشتري بيها حاجة تانية أحسنلك (احنا مش عايزين
+                      نبيع وخلاص.. احنا عايزينك تخلص البرنامج كله)
+                    </p>
+                  </div>
+                  <!-- item -->
+                  <div class="flex items-start gap-3">
+                    <span
+                      class="w-6 h-6 rounded-full bg-[#c0392b]/15 text-[#c0392b] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5"
+                      >✗</span
+                    >
+                    <p
+                      class="text-[#000000] text-[15px] sm:text-[17px] md:text-[19px] font-semibold leading-relaxed text-right flex-1"
+                    >
+                      لو انت من الناس اللي فاكرة إن البرمجة هاتخليك تجيب فلوس
+                      كتير بشكل سريع، بدون ماتشتغل على نفسك وتسأل الناس الخبرة
+                      وتبحث عن الفرص باستمرار
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Bottom Teal Commitment Block ── -->
+          <div
+            class="bg-primary px-5 sm:px-10 md:px-16 py-6 sm:py-8 md:py-12 mt-6 md:mt-[52px] rounded-[20px] text-right shadow-sm"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <h3
+              class="text-secondary text-[20px] sm:text-[26px] md:text-[34px] font-bold mb-3 md:mb-4"
+            >
+              البرنامج هايبقى معاك لمدة سنة كاملة..
+            </h3>
+            <p
+              class="text-white text-[15px] sm:text-[18px] md:text-[22px] font-semibold md:font-bold leading-relaxed md:leading-loose"
+            >
+              ليه مش انتو قولتوا مدته 30 يوم؟<br />
+              انت صح بس احنا عاملين حسابنا إنك هاتكسل شوية أو هاتبقى مشغول شوية
+              فقولنا نديك وقتك براحتك..<br />
+              بس خد بالك إنك لو قعدت ذاكرته في سنة فإن الشغلانة دي مش ليك وإنك
+              بتتعامل معاها ومع نفسك باستهتار (معذرة إني بقولك كدا بس دي
+              الحقيقة) واحنا عايزين اللي ياخد البرنامج التدريبي يخلصه في أسرع
+              وقته المحدد
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Golden Ticket Section ========== -->
+      <section
+        id="golden-ticket"
+        class="w-full my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Header of section -->
+          <div class="flex flex-col gap-6 md:gap-8">
+            <h2
+              class="text-[#000000] text-[22px] sm:text-[26px] md:text-[32px] font-bold"
+            >
+              هل هتاخد البرنامج التدريبي وخلاص على كدا ويبقى زيه زي أي برنامج
+              أونلاين اشتريته أو هاتشتريه؟
+            </h2>
+            <p class="text-[#000000] text-[22px] md:text-[24px] font-bold">
+              فوق أكدتلك إننا عايزينك تخلص البرنامج فعلاً مش مجرد تشتريه وخلاص
+              وعشان كدا هاتاخد مع البرنامج
+              <span class="text-secondary"
+                >الجولدن<br />
+                تيكت</span
+              >
+              ودي عبارة عن:
+            </p>
+          </div>
+          <div class="golden-ticket-img mt-[32px]">
+            <img src="./images/Frame 1038.png" alt="" class="w-full" />
+          </div>
+
+          <!-- ── Value & Pricing Story Block ── -->
+          <div
+            class="bg-primary rounded-[24px] p-8 md:p-12 text-white mt-[52px] shadow-sm"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <h3
+              class="text-secondary text-[32px] md:text-[40px] font-bold mb-6 text-right"
+            >
+              تفتكر كل دا قيمته كام؟
+            </h3>
+            <div
+              class="flex flex-col gap-6 text-[18px] md:text-[22px] font-bold leading-loose text-right"
+            >
+              <p>
+                لما فكرنا في تسعير البرنامج التدريبي + الجولدن تيكت لقينا إن فيه
+                حاجات هاتخلي البرنامج يبقى غالي جداً زي الإيفنتات وإننا لو
+                عملناه
+                <span class="text-secondary font-extrabold"
+                  >بسعر 7000 آلاف جنيه</span
+                >
+                هايكون سعر مناسب ولكن ناس كتير مش هاتقدر تشتري خصوصا إنهم لسة
+                بيبدأوا في المجال..
+              </p>
+              <p>
+                فقررنا إنه يكون بسعر مناسب أكتر من كدا
+                <span class="text-secondary font-extrabold"
+                  >وهايبقى بـ 2800 جنيه</span
+                >
+                بحيث إنك تقدر تشترك بدون ما المبلغ يبقى كبير بالنسبالك وتعتبره
+                أكنها فلوس سفرية مصيف لمدة يومين تلاتة بس الفرق إنك هنا
+                بتستثمرهم في نفسك عشان تكسب أكتر قدام.. فلوس بتجيب فلوس أكتر
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Pricing & Package Offer Card ── -->
+          <div
+            class="bg-[#EEFEFF] border border-[#1f979a]/40 rounded-[28px] p-8 md:p-12 mt-[52px] max-w-[820px] mx-auto shadow-sm"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <!-- Card Header -->
+            <h3
+              class="text-[#000000] text-[28px] md:text-[36px] font-extrabold text-center mb-6"
+            >
+              انضم للبرنامج التدريبي دلوقتي
+            </h3>
+
+            <!-- Price -->
+            <div class="flex items-center justify-center gap-3">
+              <span
+                class="text-secondary text-[36px] md:text-[44px] font-extrabold"
+              >
+                بـ 2800جنيه
+              </span>
+              <span
+                class="text-[#718096] text-[22px] md:text-[26px] line-through font-bold"
+              >
+                7000
+              </span>
+            </div>
+            <p
+              class="text-secondary text-[20px] md:text-[22px] font-bold text-center mt-1 mb-8"
+            >
+              لمدة سنه كامله
+            </p>
+
+            <!-- Features Checklist -->
+            <ul
+              class="flex flex-col gap-4 max-w-[620px] mx-auto mb-10"
+              role="list"
+            >
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-6 h-6 text-primary shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="text-[#000000] text-[18px] md:text-[20px] font-bold"
+                >
+                  كورس خريطة عالم البرمجة لمدة سنة كاملة
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-6 h-6 text-primary shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="text-[#000000] text-[18px] md:text-[20px] font-bold"
+                >
+                  جولدن تيكت تسمحلك بحضور الإيفنتات في المقر
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-6 h-6 text-primary shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="text-[#000000] text-[18px] md:text-[20px] font-bold"
+                >
+                  جولدن تيكت بتحديثات الكورس
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-6 h-6 text-primary shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="text-[#000000] text-[18px] md:text-[20px] font-bold"
+                >
+                  جولدن تيكت بحضور اللقاءات الشهرية المباشرة
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-6 h-6 text-primary shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="text-[#000000] text-[18px] md:text-[20px] font-bold"
+                >
+                  جولدن تيكت بالانضمام لمجتمع المبرمجين العرب الحصري على
+                  المشتركين
+                </span>
+              </li>
+            </ul>
+
+            <!-- CTA Button -->
+            <div class="flex justify-center">
+              <a
+                href="checkout.html"
+                class="bg-primary hover:bg-primary/90 text-white text-[22px] md:text-[24px] font-bold py-3.5 px-16 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 inline-block text-center"
+              >
+                انضم الان
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Value Proposition & Story Hook Block ── -->
+          <div
+            class="flex flex-col gap-8 text-center mt-[60px] max-w-[1050px] mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <!-- Main statement -->
+            <p
+              class="text-[#000000] text-[22px] md:text-[30px] font-bold leading-relaxed"
+            >
+              <span class="text-primary font-bold">بـ 2800 جنيه</span>
+              انت مش بتشتري مجرد كورس ولا شوية لايفات وإيفنتات لكن بتشتري تذكرة
+              دخول لواحدة من أقوى المهارات اللي هاتكسبك فلوس خصوصا لما تدمجها مع
+              الذكاء الاصطناعي.
+            </p>
+
+            <!-- Highlight quote -->
+            <p class="text-secondary text-[22px] md:text-[28px] font-bold">
+              مهاراتك في راسك.. لابك في شنطتك.. اشتغل من أي مكان يعجبك
+            </p>
+
+            <!-- Hook paragraph -->
+            <p
+              class="text-primary text-[20px] md:text-[26px] font-bold leading-relaxed"
+            >
+              أشكرك إنك كملت قراءة لحد هنا، دي حاجة مش سهل أي حد يعملها دلوقتي
+              وزمانه طلع من الموقع وشاف 50 ريلز وشورتس.. بس قبل ماتمشي حابب
+              اعرفك على قصة شاب صغير اسمه محمد عبدالتواب..
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Success Story ========== -->
+      <section
+        id="success-story"
+        class="w-full my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Testimonial Card -->
+          <div
+            class="relative bg-[#EEFEFF] border border-[#1f979a]/30 rounded-[32px] p-8 md:p-12 shadow-sm overflow-hidden"
+          >
+            <!-- Decorative Quote Icon (Top Left) -->
+            <div
+              class="absolute top-6 left-8 text-[#CBD5E1] text-[48px] font-serif leading-none select-none opacity-60"
+              aria-hidden="true"
+            >
+              “
+            </div>
+
+            <!-- Card Header / Title -->
+            <div class="text-center mb-10">
+              <h2
+                class="text-primary text-[28px] md:text-[36px] font-extrabold"
+              >
+                قصه نجاح محمد عبدالتواب
+              </h2>
+              <!-- Yellow underline bar -->
+              <div
+                class="w-20 h-1.5 bg-secondary mx-auto mt-3 rounded-full"
+              ></div>
+            </div>
+
+            <!-- Card Body: Avatar + Story Text -->
+            <div
+              class="flex flex-col lg:flex-row items-center justify-between gap-10"
+            >
+              <!-- Avatar & Role Badge (Right side in RTL) -->
+              <div class="relative flex flex-col items-center shrink-0">
+                <div
+                  class="w-[200px] h-[200px] md:w-[230px] md:h-[230px] rounded-full p-1.5 border-[4px] border-secondary overflow-hidden shadow-md bg-white"
+                >
+                  <img
+                    src="./images/success-story.jpg"
+                    alt="محمد عبدالتواب"
+                    class="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <!-- Badge -->
+                <span
+                  class="bg-primary text-white text-[16px] md:text-[18px] font-bold py-1.5 px-6 rounded-full -mt-5 z-10 shadow-md whitespace-nowrap"
+                >
+                  طالب علوم حاسب
+                </span>
+
+                <!-- Decorative Quote -->
+                <div
+                  class="absolute bottom-6 -right-6 text-[#CBD5E1] text-[36px] font-serif leading-none select-none opacity-60"
+                  aria-hidden="true"
+                >
+                  ”
+                </div>
+              </div>
+
+              <!-- Story Text (Left side in RTL) -->
+              <div
+                class="flex-1 flex flex-col gap-6 text-[#333f4c] font-bold text-[18px] md:text-[21px] leading-[2] text-right"
+              >
+                <p>
+                  محمد طالب في كلية علوم قسم حاسب، جالنا من حوالي سنة أو أزيد
+                  حاجة بسيطة وكالعادة كان حاسس انه تايه ومش عارف أي حاجة، وبدأ
+                  معانا مسار الأساسيات وبعد ماخلصه دخل على تخصص الـ FRONT END.
+                </p>
+                <p>
+                  لحظنا إن مستواه بيتطور بسرعة جداً ودا خلانا نعينه عندنا في قسم
+                  السوفت وير وبجانب شغله معانا بيشتغل فري لانسر مع شركات تانية
+                  ودخله بيزيد بشكل محترم جداً بالنسبة لسنه اللهم بارك (احنا
+                  شخصياً كل شوية بنزوده عشان مايروحش لغيرنا وتعبنا يروح في الأرض
+                  وغيرنا ياخده على الجاهز)
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Highlight Box -->
+            <div
+              class="bg-[#DDF7F9] rounded-[20px] p-6 md:p-8 mt-10 text-right"
+            >
+              <h4
+                class="text-primary text-[20px] md:text-[24px] font-extrabold mb-2"
+              >
+                كل دا خلال سنة وربع
+              </h4>
+              <p
+                class="text-[#333f4c] text-[17px] md:text-[20px] font-bold leading-relaxed"
+              >
+                مش ست سبع سنين، ودا عشان هو مركز كويس وتقدر تزورنا في الفرع
+                الدقي وتسأله بنفسك لو حبيت.
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Action & Urgency Card ── -->
+          <div
+            class="bg-[#EEFEFF] border border-[#1f979a]/30 rounded-[32px] p-8 md:p-12 mt-10 shadow-sm"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <!-- Title -->
+            <h3
+              class="text-primary text-[24px] md:text-[32px] font-extrabold text-center mb-8"
+            >
+              ابدأ دلوقتي عشان بعد 3 سنين هاتقول ياريتني كنت بدأت من 3 سنين
+            </h3>
+
+            <!-- Body Paragraphs -->
+            <div
+              class="flex flex-col gap-5 text-[#1f2937] text-[18px] md:text-[21px] font-bold leading-[2] text-right"
+            >
+              <p>
+                مش عايزين نعمل زي الإعلانات الهابطة ونضحك عليك ونقولك الحق مفيش
+                غير أماكن محدودة والسعر دا عرض لفترة محدودة.
+              </p>
+              <p>
+                لأ مش هنقولك كدا.. لكن اللي متأكدين منه إن سعر الحاجة دايماً
+                بيزيد وإن أي تحديث يحصل في الكورس طبيعي يزود سعره، فا انت استغل
+                السعر حالياً واستفيد من أي تحديثات ببلاش بدون ماتدفع جنيه زيادة
+                وافتكر إنك طالما دخلت مجتمع المبرمجين العرب فاستفادتك هاتكون
+                أكبر بكتير من كونك اشتريت كورس
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Faq ========== -->
+      <section
+        id="faq"
+        class="w-full my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] mx-auto">
+          <!-- Section Title -->
+          <h2
+            class="text-primary text-[30px] md:text-[40px] font-extrabold text-center mb-12"
+          >
+            الاسئلة الشائعة ( سؤال وجواب )
+          </h2>
+
+          <!-- Accordion Container -->
+          <div class="flex flex-col gap-5">
+            <!-- FAQ Item 1 (From Screenshot) -->
+            <div
+              class="faq-item border border-[#C0C0C0] rounded-[20px] bg-white transition-all duration-300 overflow-hidden shadow-sm"
+            >
+              <button
+                type="button"
+                class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 select-none focus:outline-none"
+                aria-expanded="false"
+              >
+                <span
+                  class="faq-question text-[#000000] text-[20px] md:text-[22px] font-bold transition-colors duration-300"
+                >
+                  هل محتاج اكون معايا انجليزي علشان انضم للبرنامج
+                </span>
+                <svg
+                  class="faq-icon w-6 h-6 text-[#1f2937] transition-all duration-300 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div
+                    class="faq-answer px-6 pb-6 pt-0 text-[#333f4c] text-[17px] md:text-[19px] font-semibold leading-[1.9] text-right"
+                  >
+                    لأ مش محتاج.. فيه بعض المصطلحات البسيطة بالإنجليزي ولكن
+                    ماتقلقش كله مشروح ومتوضح، ولو فيه أي حاجة عايز تسأل عنها
+                    تقدر تبعتها للمجتمع الحصري اللي هاتنضمله وكمان تقدر تسأل
+                    عنها في اللقاءات الشهرية.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div
+              class="faq-item border border-[#C0C0C0] rounded-[20px] bg-white transition-all duration-300 overflow-hidden shadow-sm"
+            >
+              <button
+                type="button"
+                class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 select-none focus:outline-none"
+                aria-expanded="false"
+              >
+                <span
+                  class="faq-question text-[#000000] text-[20px] md:text-[22px] font-bold transition-colors duration-300"
+                >
+                  هل الكورس دا مناسب ليا لو أنا معنديش أي خلفية برمجية من قبل؟
+                </span>
+                <svg
+                  class="faq-icon w-6 h-6 text-[#1f2937] transition-all duration-300 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div
+                    class="faq-answer px-6 pb-6 pt-0 text-[#333f4c] text-[17px] md:text-[19px] font-semibold leading-[1.9] text-right"
+                  >
+                    بالتأكيد، الكورس مصمم بالكامل من الصفر ويبدأ معاك من أول أ ب
+                    برمجة وفهم طريقة تفكير الكمبيوتر وصولاً لاختيار مسارك
+                    التخصصي والعمل بالذكاء الاصطناعي.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div
+              class="faq-item border border-[#C0C0C0] rounded-[20px] bg-white transition-all duration-300 overflow-hidden shadow-sm"
+            >
+              <button
+                type="button"
+                class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 select-none focus:outline-none"
+                aria-expanded="false"
+              >
+                <span
+                  class="faq-question text-[#000000] text-[20px] md:text-[22px] font-bold transition-colors duration-300"
+                >
+                  إيه هي الجولدن تيكت وإزاي استفيد منها؟
+                </span>
+                <svg
+                  class="faq-icon w-6 h-6 text-[#1f2937] transition-all duration-300 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div
+                    class="faq-answer px-6 pb-6 pt-0 text-[#333f4c] text-[17px] md:text-[19px] font-semibold leading-[1.9] text-right"
+                  >
+                    الجولدن تيكت بتديك وصول مجاني لكل التحديثات المستقبلية
+                    للكورس لمدة سنة كاملة، وحضور الإيفنتات واللقاءات الشهرية
+                    المباشرة والانضمام لمجتمع المبرمجين العرب الحصري.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div
+              class="faq-item border border-[#C0C0C0] rounded-[20px] bg-white transition-all duration-300 overflow-hidden shadow-sm"
+            >
+              <button
+                type="button"
+                class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 select-none focus:outline-none"
+                aria-expanded="false"
+              >
+                <span
+                  class="faq-question text-[#000000] text-[20px] md:text-[22px] font-bold transition-colors duration-300"
+                >
+                  هل هاحتاج لابتوب بإمكانيات عالية للمتابعة في الكورس؟
+                </span>
+                <svg
+                  class="faq-icon w-6 h-6 text-[#1f2937] transition-all duration-300 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div
+                    class="faq-answer px-6 pb-6 pt-0 text-[#333f4c] text-[17px] md:text-[19px] font-semibold leading-[1.9] text-right"
+                  >
+                    لا، أي لابتوب أو كمبيوتر عادي بإمكانيات بسيطة هيكون كافي
+                    جداً لبدء تعلم الأساسيات وتطبيق كل التطبيقات العملية معنا.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== About EraaSoft ========== -->
+      <section
+        id="about-eraasoft"
+        class="w-full my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <!-- Title & Subtitle -->
+          <div class="text-center mb-8">
+            <h2
+              class="text-primary text-[32px] md:text-[40px] font-extrabold mb-3"
+            >
+              عن ايرا سوفت (EraaSoft)
+            </h2>
+            <p class="text-[#000000] text-[18px] md:text-[22px] font-bold">
+              إيراسوفت هي منصة تعليمية تهدف إلى تقديم أفضل الدورات التقنية في
+              مجالات البرمجة والذكاء الاصطناعي
+            </p>
+          </div>
+
+          <!-- 4 Photos Infinite Marquee Carousel -->
+          <div class="marquee-wrapper" dir="ltr">
+            <div class="marquee-track">
+              <!-- Set 1 (Ultra HD Source Photos) -->
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+              >
+                <img
+                  src="./images/eraasoft5.jpg"
+                  alt="EraaSoft Training Session 1"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+              >
+                <img
+                  src="./images/eraasoft6.jpg"
+                  alt="EraaSoft Training Session 2"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+              >
+                <img
+                  src="./images/eraasoft7.jpg"
+                  alt="EraaSoft Training Session 3"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+              >
+                <img
+                  src="./images/eraasoft8.jpg"
+                  alt="EraaSoft Training Session 4"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+                aria-hidden="true"
+              >
+                <img
+                  src="./images/eraasoft5.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+                aria-hidden="true"
+              >
+                <img
+                  src="./images/eraasoft6.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+                aria-hidden="true"
+              >
+                <img
+                  src="./images/eraasoft7.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="w-[280px] sm:w-[320px] h-[190px] sm:h-[220px] rounded-[20px] overflow-hidden shadow-sm shrink-0 border border-primary/20 bg-gray-100"
+                aria-hidden="true"
+              >
+                <img
+                  src="./images/eraasoft8.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Academic Partners ========== -->
+      <section
+        id="academic-partners"
+        class="w-full my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <div
+            class="bg-[#EEFEFF] border border-[#1f979a]/30 rounded-[32px] p-6 sm:p-8 md:p-12 shadow-sm text-center overflow-hidden"
+          >
+            <h2
+              class="text-primary text-[30px] md:text-[36px] font-extrabold mb-4"
+            >
+              شركاؤنا الأكاديميون
+            </h2>
+            <p
+              class="text-[#333f4c] text-[18px] md:text-[21px] font-bold leading-relaxed max-w-4xl mx-auto"
+            >
+              نعتز بشراكاتنا مع المؤسسات والجهات التعليمية، التي تسهم في تعزيز
+              المعرفة، وتطوير المهارات، وتقديم فرص تعليمية وتدريبية ذات أثر
+              إيجابي ومستدام.
+            </p>
+
+            <!-- Logos Infinite Marquee Carousel (Reverse Track) -->
+            <div class="marquee-wrapper mt-8" dir="ltr">
+              <div class="marquee-track-reverse">
+                <!-- Set 1 -->
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/englishCapsules.png"
+                    alt="English Capsules"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/moder-academy.webp"
+                    alt="Modern Academy"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/النقابه-المصريه.png"
+                    alt="نقابة المهندسين المصرية"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/SH-academy.webp"
+                    alt="أكاديمية الشروق"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/Tenth-of-ramadan-city.webp"
+                    alt="Tenth-of-ramadan-city"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+
+                <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/englishCapsules.png"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/moder-academy.webp"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/النقابه-المصريه.png"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/SH-academy.webp"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/Tenth-of-ramadan-city.webp"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Success Partners ========== -->
+      <section
+        id="success-partners"
+        class="w-full my-[92px]"
+        dir="rtl"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <div
+          class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto"
+        >
+          <div
+            class="bg-[#EEFEFF] border border-[#1f979a]/30 rounded-[32px] p-6 sm:p-8 md:p-12 shadow-sm text-center overflow-hidden"
+          >
+            <h2
+              class="text-primary text-[30px] md:text-[36px] font-extrabold mb-4"
+            >
+              شركاء النجاح
+            </h2>
+            <p
+              class="text-[#333f4c] text-[18px] md:text-[21px] font-bold leading-relaxed max-w-4xl mx-auto"
+            >
+              نؤمن بأن النجاح الحقيقي يُبنى من خلال شراكات قوية ومستدامة. نفخر
+              بثقة شركائنا وعملائنا، ونسعى دائمًا إلى بناء علاقات قائمة على
+              التعاون، الجودة، والنجاح المشترك نشاركم جزء من شركاء النجاح
+            </p>
+
+            <!-- Logos Infinite Marquee Carousel -->
+            <div class="marquee-wrapper mt-8" dir="ltr">
+              <div class="marquee-track">
+                <!-- Set 1 -->
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/wuzzuf.png"
+                    alt="WUZZUF"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/egyption tecnologists.png"
+                    alt="نقابة التكنولوجيين المصريين"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/Al-Safwa.webp"
+                    alt="معهد الصفوة العالي للهندسة"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/H.png"
+                    alt="H."
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                >
+                  <img
+                    src="./images/orange.png"
+                    alt="Orange Digital Center"
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+
+                <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/wuzzuf.png"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/egyption tecnologists.png"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/Al-Safwa.webp"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/H.png"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+                <div
+                  class="bg-white rounded-[16px] p-4 flex items-center justify-center h-[120px] sm:h-[130px] w-[180px] sm:w-[220px] shadow-sm overflow-hidden shrink-0 border border-primary/15"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="./images/orange.png"
+                    alt=""
+                    class="max-h-[85px] max-w-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer
+      id="main-footer"
+      class="bg-primary text-white py-12 mt-16"
+      dir="rtl"
+    >
+      <div
+        class="px-4 sm:px-8 md:px-[60px] lg:px-[100px] max-w-[1200px] mx-auto flex flex-col items-center justify-center text-center gap-5"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          aria-label="نبراس - الصفحة الرئيسية"
+          class="inline-block transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="./images/nebrase-logo.png"
+            alt="نبراس"
+            class="w-[140px] md:w-[160px] h-auto object-contain brightness-0 invert"
+          />
+        </a>
+
+        <!-- Copyright -->
+        <p
+          class="text-white/90 text-[15px] md:text-[17px] font-semibold tracking-wide"
+        >
+          جميع الحقوق محفوظة © 2026 — سنة أولى برمجة
+        </p>
+
+        <!-- Footer Links -->
+        <nav aria-label="روابط الفوتر" class="mt-1">
+          <ul
+            class="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-[15px] md:text-[17px] font-bold text-white/90"
+          >
+            <li>
+              <a
+                href="#terms"
+                class="hover:text-secondary transition-colors duration-200"
+              >
+                الشروط والأحكام
+              </a>
+            </li>
+            <li>
+              <a
+                href="#privacy"
+                class="hover:text-secondary transition-colors duration-200"
+              >
+                سياسة الخصوصية
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="hover:text-secondary transition-colors duration-200"
+              >
+                تواصل معنا
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Main JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
