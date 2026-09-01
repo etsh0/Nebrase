@@ -269,15 +269,26 @@
             data-aos-duration="900"
             data-aos-delay="150"
           >
-            <video
-              class="w-full block aspect-video object-cover"
-              controls
-              poster="./images/hero-img.jpg"
-              aria-label="فيديو تعريفي عن برنامج تعلم البرمجة في 30 يوم"
-            >
-              <source src="#" type="video/mp4" />
-              متصفحك لا يدعم تشغيل الفيديو.
-            </video>
+            <!-- Video wisita -->
+            <script src="https://fast.wistia.com/player.js" async></script>
+            <script
+              src="https://fast.wistia.com/embed/ph9xvlpppd.js"
+              async
+              type="module"
+            ></script>
+            <style>
+              wistia-player[media-id="ph9xvlpppd"]:not(:defined) {
+                background: center / contain no-repeat
+                  url("https://fast.wistia.com/embed/medias/ph9xvlpppd/swatch");
+                display: block;
+                filter: blur(5px);
+                padding-top: 56.25%;
+              }
+            </style>
+            <wistia-player
+              media-id="ph9xvlpppd"
+              aspect="1.7777777777777777"
+            ></wistia-player>
           </div>
         </div>
       </section>
