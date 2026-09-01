@@ -8,6 +8,17 @@ AOS.init({
   easing: "ease-out-cubic",
 });
 
+/* ── Smooth scroll for all anchor links ── */
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
 /* =============================================
    Mobile Menu Toggle (Smooth Open/Close)
    ============================================= */
