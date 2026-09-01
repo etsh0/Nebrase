@@ -2,10 +2,7 @@
    AOS Initialization
    ============================================= */
 AOS.init({
-  duration: 800,
   once: true,
-  offset: 80,
-  easing: "ease-out-cubic",
 });
 
 /* ── Smooth scroll for all anchor links ── */
