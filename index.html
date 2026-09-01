@@ -213,21 +213,44 @@
             مفتوح في 30 يوم.
           </p>
 
-          <!-- Hero Image -->
+          <!-- Hero Image Stack -->
           <div
+            id="hero-stack-wrapper"
             class="flex justify-center mb-[72px]"
             data-aos="fade-up"
             data-aos-duration="900"
             data-aos-delay="250"
           >
-            <img
-              src="./images/hero-img.jpg"
-              alt="مدرب يشرح لمجموعة من الطلاب في قاعة تدريبية"
-              class="hero-image w-[500px] max-w-full rounded-2xl"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <!-- Photo Stack Container -->
+            <div
+              id="hero-photo-stack"
+              class="relative w-[340px] sm:w-[420px] md:w-[500px] h-[240px] sm:h-[295px] md:h-[350px] cursor-pointer select-none"
+              role="img"
+              aria-label="صور من جلسات التدريب"
+            >
+              <!-- Card 4 — bottom -->
+              <div class="hero-card absolute inset-0 rounded-2xl overflow-hidden shadow-xl" data-card="3">
+                <img src="./images/eraasoft8.jpg" alt="" class="w-full h-full object-cover" loading="eager" decoding="async" />
+              </div>
+              <!-- Card 3 -->
+              <div class="hero-card absolute inset-0 rounded-2xl overflow-hidden shadow-xl" data-card="2">
+                <img src="./images/eraasoft6.jpg" alt="" class="w-full h-full object-cover" loading="eager" decoding="async" />
+              </div>
+              <!-- Card 2 -->
+              <div class="hero-card absolute inset-0 rounded-2xl overflow-hidden shadow-xl" data-card="1">
+                <img src="./images/hero-img2.jpg" alt="" class="w-full h-full object-cover" loading="eager" decoding="async" />
+              </div>
+              <!-- Card 1 — top -->
+              <div class="hero-card absolute inset-0 rounded-2xl overflow-hidden shadow-2xl" data-card="0">
+                <img src="./images/hero-img.jpg" alt="مدرب يشرح لمجموعة من الطلاب في قاعة تدريبية" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" />
+              </div>
+
+              <!-- Tap hint -->
+              <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1.5 text-[13px] text-brand/50 font-semibold whitespace-nowrap pointer-events-none" aria-hidden="true">
+                <svg class="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg>
+                اضغط للتصفح
+              </div>
+            </div>
           </div>
 
           <!-- CTA Button -->
@@ -776,7 +799,7 @@
               data-aos-delay="250"
             >
               <div
-                class="w-[52px] h-[52px] rounded-full bg-[#FFF7E0] flex items-center justify-center shrink-0"
+                class="w-[44px] h-[44px] rounded-full bg-[#FFF7E0] flex items-center justify-center shrink-0"
               >
                 <img src="./images/trending-up-down.svg" alt="" />
               </div>
@@ -1501,7 +1524,7 @@
           </div>
           <div class="golden-ticket-img mt-[32px]">
             <img
-              src="./images/Frame 1038.png"
+              src="./images/golden-ticket.jpg"
               alt="المجتمع الحصري للمشتركين"
               class="w-full"
               loading="lazy"

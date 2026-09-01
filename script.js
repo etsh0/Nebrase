@@ -5,6 +5,73 @@ AOS.init({
   once: true,
 });
 
+/* =============================================
+   Hero Photo Stack — Click to Cycle + Auto Rotate + Hover Tilt
+   ============================================= */
+(function () {
+  const stack = document.getElementById("hero-photo-stack");
+  if (!stack) return;
+
+  const cards = Array.from(stack.querySelectorAll(".hero-card"));
+  const total = cards.length; // 4
+
+  // card[0] = top, card[total-1] = bottom
+  // data-card attribute tracks visual depth (0 = front, 3 = back)
+
+  // Cycle: push front card to the back
+  function cycleStack() {
+    stack.classList.add("is-cycling");
+
+    // Update data-card attributes: 0→back, others shift forward
+    cards.forEach((card) => {
+      const cur = parseInt(card.dataset.card, 10);
+      const next = (cur + 1) % total;
+      card.dataset.card = next;
+    });
+
+    setTimeout(() => stack.classList.remove("is-cycling"), 600);
+  }
+
+  // Click to cycle
+  stack.addEventListener("click", cycleStack);
+
+  // Auto-cycle every 3.5s
+  const autoTimer = setInterval(cycleStack, 3500);
+
+  // Pause auto-cycle on hover
+  stack.addEventListener("mouseenter", () => clearInterval(autoTimer));
+
+  // Hover tilt parallax
+  stack.addEventListener("mousemove", (e) => {
+    const rect = stack.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / (rect.width / 2);   // -1 to 1
+    const dy = (e.clientY - cy) / (rect.height / 2);  // -1 to 1
+
+    // Apply tilt only to the top card (data-card="0")
+    cards.forEach((card) => {
+      if (card.dataset.card === "0") {
+        card.style.transform = `
+          rotate(${dx * 4}deg)
+          rotateX(${-dy * 4}deg)
+          translateY(0px)
+          scale(1)
+        `;
+      }
+    });
+  });
+
+  stack.addEventListener("mouseleave", () => {
+    // Reset top card to neutral
+    cards.forEach((card) => {
+      if (card.dataset.card === "0") {
+        card.style.transform = "";
+      }
+    });
+  });
+})();
+
 /* ── Smooth scroll for all anchor links ── */
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", function (e) {
