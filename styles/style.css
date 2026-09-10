@@ -49,27 +49,27 @@ img {
 /* Stacked depth positions (bottom → top) */
 .hero-card[data-card="3"] {
   transform: rotate(-9deg) translate(-18px, 14px) scale(0.88);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   filter: brightness(0.7);
   z-index: 1;
 }
 .hero-card[data-card="2"] {
   transform: rotate(-5deg) translate(-9px, 8px) scale(0.93);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   filter: brightness(0.8);
   z-index: 2;
 }
 .hero-card[data-card="1"] {
   transform: rotate(-2deg) translate(-3px, 4px) scale(0.97);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
   filter: brightness(0.9);
   z-index: 3;
 }
 .hero-card[data-card="0"] {
   transform: rotate(0deg) translate(0, 0) scale(1);
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.22),
-    0 0 0 3px rgba(23,130,133,0.18);
+    0 20px 60px rgba(0, 0, 0, 0.22),
+    0 0 0 3px rgba(23, 130, 133, 0.18);
   filter: brightness(1);
   z-index: 4;
   animation: heroFloat 4s ease-in-out infinite;
@@ -77,8 +77,13 @@ img {
 
 /* Subtle floating animation on the top card */
 @keyframes heroFloat {
-  0%, 100% { transform: rotate(0deg) translateY(0px) scale(1); }
-  50%       { transform: rotate(0deg) translateY(-8px) scale(1); }
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0px) scale(1);
+  }
+  50% {
+    transform: rotate(0deg) translateY(-8px) scale(1);
+  }
 }
 
 /* When stack is being clicked — pause float, show click feedback */
@@ -238,10 +243,250 @@ img {
   100% {
     transform: translateX(0);
   }
-}
+  0% {
     transform: translateX(-50%);
   }
   100% {
     transform: translateX(0);
   }
+}
+
+/* =============================================
+   Golden Ticket Cards — Hero Section
+   ============================================= */
+
+/* Eyebrow label above the cards */
+.golden-eyebrow-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #c97d06;
+  letter-spacing: 0.4px;
+}
+
+/* ── Entry animation: Fan Drop ── */
+@keyframes ticketDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) rotate(var(--t-rot, -4deg)) scale(0.88);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(6px) rotate(0.4deg) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+/* ── Shimmer sweep across the gold surface ── */
+@keyframes gtShimmer {
+  0% {
+    transform: translateX(-140%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-15deg);
+  }
+}
+
+/* ── Outer wrapper for punch-hole notches ── */
+.ticket-outer {
+  position: relative;
+}
+
+/* Semicircle punch holes on left / right edges */
+.ticket-notch-l,
+.ticket-notch-r {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  z-index: 5;
+  pointer-events: none;
+}
+.ticket-notch-l {
+  left: -11px;
+  box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.12);
+}
+.ticket-notch-r {
+  right: -11px;
+  box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Main golden card ── */
+.golden-ticket-card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(
+    138deg,
+    #ffe566 0%,
+    #f6ae20 28%,
+    #e8950a 58%,
+    #f6c230 78%,
+    #ffd44d 100%
+  );
+  /* box-shadow:
+    0 8px 32px rgba(246, 174, 32, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08); */
+  animation: ticketDrop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: var(--t-delay, 0s);
+  transition:
+    transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.38s ease;
+}
+
+.golden-ticket-card:hover {
+  transform: translateY(-8px) scale(1.018);
+  box-shadow:
+    0 24px 64px rgba(246, 174, 32, 0.58),
+    0 0 40px rgba(246, 174, 32, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Perforated dot strip — top & bottom edges */
+.t-dots-top,
+.t-dots-bot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.18) 2px,
+    transparent 2px
+  );
+  background-size: 14px 10px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+.t-dots-top {
+  top: 0;
+}
+.t-dots-bot {
+  bottom: 0;
+}
+
+/* ── Left stub: serial number + icon ── */
+.t-stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 14px;
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+/* Serial number */
+.t-num {
+  font-size: 0.62rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.32);
+  letter-spacing: 1.5px;
+  font-family: "Courier New", monospace;
+}
+
+/* Icon circle */
+.t-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+.golden-ticket-card:hover .t-icon-wrap {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1) rotate(-5deg);
+}
+.t-icon-wrap svg {
+  width: 21px;
+  height: 21px;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+/* ── Dashed perforation separator ── */
+.t-divider {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 0;
+  margin: 14px 0;
+  border-left: 2px dashed rgba(0, 0, 0, 0.22);
+}
+
+/* ── Text body (Arabic content) ── */
+.t-body {
+  flex: 1;
+  padding: 18px 16px 18px 8px;
+  text-align: right;
+  min-width: 0;
+}
+
+/* "GOLDEN TICKET" micro eyebrow */
+.t-eyebrow {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  color: rgba(0, 0, 0, 0.38);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+/* Benefit heading */
+.t-title {
+  font-size: clamp(0.98rem, 2vw, 1.12rem);
+  font-weight: 800;
+  color: #1a1200;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+/* Benefit description */
+.t-text {
+  font-size: clamp(0.74rem, 1.4vw, 0.83rem);
+  color: rgba(0, 0, 0, 0.62);
+  line-height: 1.78;
+}
+
+/* ── Gold shimmer overlay ── */
+.t-shimmer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 4;
+}
+.t-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.52) 50%,
+    transparent 100%
+  );
+  transform: translateX(-140%) skewX(-15deg);
+}
+.golden-ticket-card:hover .t-shimmer::before {
+  animation: gtShimmer 0.9s ease forwards;
 }
