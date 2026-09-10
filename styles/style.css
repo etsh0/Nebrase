@@ -309,11 +309,11 @@ img {
 }
 .ticket-notch-l {
   left: -11px;
-  box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.12);
+  /* box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.12); */
 }
 .ticket-notch-r {
   right: -11px;
-  box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.12);
+  /* box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.12); */
 }
 
 /* ── Main golden card ── */
@@ -343,11 +343,11 @@ img {
 
 .golden-ticket-card:hover {
   transform: translateY(-8px) scale(1.018);
-  box-shadow:
+  /* box-shadow:
     0 24px 64px rgba(246, 174, 32, 0.58),
     0 0 40px rgba(246, 174, 32, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+    inset 0 -1px 0 rgba(0, 0, 0, 0.06); */
 }
 
 /* Perforated dot strip — top & bottom edges */
