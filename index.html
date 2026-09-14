@@ -488,13 +488,13 @@
             data-aos-duration="900"
             data-aos-delay="250"
           >
-              <!-- Photo Stack Container -->
-              <div
-                id="hero-photo-stack"
-                class="relative w-[86vw] max-w-[310px] sm:w-[420px] sm:max-w-none md:w-[500px] aspect-[10/7] cursor-pointer select-none"
-                role="img"
-                aria-label="صور من جلسات التدريب"
-              >
+            <!-- Photo Stack Container -->
+            <div
+              id="hero-photo-stack"
+              class="relative w-[86vw] max-w-[310px] sm:w-[420px] sm:max-w-none md:w-[500px] aspect-[10/7] cursor-pointer select-none"
+              role="img"
+              aria-label="صور من جلسات التدريب"
+            >
               <!-- Card 4 — bottom -->
               <div
                 class="hero-card absolute inset-0 rounded-2xl overflow-hidden shadow-xl"
@@ -1094,26 +1094,45 @@
         >
           <!-- Banner -->
           <div
-            class="bg-primary py-6 md:py-8 px-6 md:px-10 text-center rounded-[16px] mb-12"
+            class="bg-[#000000] border border-[#C0C0C0] py-6 md:py-12 px-4 md:px-12 text-center rounded-[20px] mb-12 shadow-xl relative overflow-hidden"
             data-aos="fade-up"
             data-aos-duration="700"
           >
+            <!-- Ambient subtle glow accents -->
+            <div
+              class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-primary/20 blur-3xl pointer-events-none rounded-full"
+              aria-hidden="true"
+            ></div>
+
             <p
-              class="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-white mb-[10px] leading-relaxed"
+              class="relative z-10 text-[18px] sm:text-[20px] md:text-[24px] font-bold text-white mb-6 leading-relaxed max-w-[980px] mx-auto"
             >
               عشان كدا قررت اعملك برنامج تدريبي تاسيسي بيبدأ معاك من الصفر (من
               تحت الصفر كمان) عشان متقعش في الغلط اللي انا وقعت فيه وماتخسرش وقت
               وتحرق طاقة، يخلوك تخسر فلوس وتكره البرمجة، واللي المفروض تتعلمه في
               شهرين ياخد منك سنتين تلاتة!!
             </p>
-            <h2
-              id="common-problems-title"
-              class="text-[22px] sm:text-[26px] md:text-[32px] font-bold text-white leading-[1.5]"
+
+            <div
+              class="relative z-10 flex flex-col items-center justify-center gap-3"
             >
-              البرنامج انا سميته
-              <span class="text-secondary">"خريطة عالم البرمجة"</span> وهو عبارة
-              عن مسار بسيط مكثف مكون من4 مراحل رئيسية
-            </h2>
+              <span
+                class="text-[20px] sm:text-[24px] md:text-[28px] font-bold text-white/95 leading-snug"
+              >
+                البرنامج انا سميته
+              </span>
+              <h2
+                id="world-of-programming-title"
+                class="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[58px] font-black text-secondary leading-tight tracking-tight py-1"
+              >
+                "خريطة عالم البرمجة"
+              </h2>
+              <span
+                class="text-[20px] sm:text-[24px] md:text-[28px] font-bold text-white/95 leading-snug"
+              >
+                وهو عبارة عن مسار بسيط مكثف مكون من4 مراحل رئيسية
+              </span>
+            </div>
           </div>
           <!-- Cards Container (Sticky Stack) -->
           <div class="stages-stack flex flex-col">
@@ -1222,9 +1241,29 @@
                   <p
                     class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
                   >
-                    ✅ مبروك انت كدا خلصت المرحلة الاولى وجاهز للمرحلة الثانيه
+                    مبروك انت كدا خلصت المرحلة الاولى وجاهز للمرحلة الثانيه
                   </p>
                 </div>
+              </div>
+
+              <!-- Mobile Down Arrow to Next Stage -->
+              <div
+                class="flex md:hidden items-center justify-center py-2"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-8 h-8 text-secondary animate-bounce"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4.5v15m0 0l-6-6m6 6l6-6"
+                  />
+                </svg>
               </div>
             </div>
 
@@ -1331,10 +1370,29 @@
                   <p
                     class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
                   >
-                    ✅ مبروك انت كدا خلصت المرحلة الثانيه وجاهز للمرحلة الثالثه
-                    ( ركز اوي )
+                    مبروك انت كدا خلصت المرحلة الثانيه وجاهز للمرحلة الثالثه
                   </p>
                 </div>
+              </div>
+
+              <!-- Mobile Down Arrow to Next Stage -->
+              <div
+                class="flex md:hidden items-center justify-center py-2"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-8 h-8 text-secondary animate-bounce"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4.5v15m0 0l-6-6m6 6l6-6"
+                  />
+                </svg>
               </div>
             </div>
 
@@ -1432,10 +1490,29 @@
                   <p
                     class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
                   >
-                    ✅ مبروك انت كدا خلصت سنة أولى برمجة بس لسة فاضل مرحلة مهمة
-                    جداً
+                    مبروك انت كدا خلصت سنة أولى برمجة بس لسة فاضل مرحلة مهمة
                   </p>
                 </div>
+              </div>
+
+              <!-- Mobile Down Arrow to Next Stage -->
+              <div
+                class="flex md:hidden items-center justify-center py-2"
+                aria-hidden="true"
+              >
+                <svg
+                  class="w-8 h-8 text-secondary animate-bounce"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4.5v15m0 0l-6-6m6 6l6-6"
+                  />
+                </svg>
               </div>
             </div>
 
@@ -1535,7 +1612,7 @@
                   <p
                     class="text-primary text-[18px] sm:text-[22px] md:text-[30px] font-bold"
                   >
-                    ✅مبروك انت دلوقتي اتخرجت، وبقيت عارف :
+                    مبروك انت دلوقتي اتخرجت، وبقيت عارف :
                   </p>
                 </div>
               </div>
