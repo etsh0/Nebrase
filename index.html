@@ -1866,14 +1866,295 @@
               ودي عبارة عن:
             </p>
           </div>
-          <div class="golden-ticket-img mt-[32px]">
-            <img
-              src="./images/golden-ticket.jpg"
-              alt="المجتمع الحصري للمشتركين"
-              class="w-full"
-              loading="lazy"
-              decoding="async"
-            />
+          <!-- ── Master Golden Ticket UI ── -->
+          <div class="mt-[32px]">
+            <div
+              class="master-golden-ticket rounded-[24px] sm:rounded-[32px] overflow-hidden flex flex-col lg:flex-row-reverse relative"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
+              <!-- Shimmer sweep -->
+              <div class="mgt-shimmer" aria-hidden="true"></div>
+
+              <!-- ── Main Ticket Body ── -->
+              <div
+                class="flex-1 p-4 sm:p-7 md:p-9 flex flex-col justify-between text-right"
+              >
+                <!-- Ticket Top Header -->
+                <div
+                  class="flex flex-wrap items-center justify-between gap-3 border-b border-black/15 pb-4 sm:pb-5 mb-5 sm:mb-6"
+                >
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#1a1200] text-[#f6ae20] flex items-center justify-center shrink-0 shadow-md"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <span
+                        class="block text-[11px] sm:text-[12px] font-black tracking-widest text-[#1a1200]/70 uppercase"
+                        >VIP GOLDEN TICKET</span
+                      >
+                      <h3
+                        class="text-[24px] sm:text-[32px] md:text-[38px] font-black text-[#1a1200] leading-none"
+                      >
+                        الجولدن تيكت
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#1a1200] text-[#ffd566] text-[12px] sm:text-[13px] font-extrabold shadow-sm"
+                    >
+                      <span
+                        class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+                      ></span>
+                      صلاحية مدى الحياة
+                    </span>
+                  </div>
+                </div>
+
+                <!-- 4 Core Benefits -->
+                <div class="flex flex-col gap-3.5 sm:gap-4">
+                  <!-- Item 1: Community -->
+                  <div
+                    class="bg-white/45 hover:bg-white/65 transition-colors rounded-2xl p-3.5 sm:p-4 md:p-5 border border-white/60 shadow-sm flex items-start gap-3 sm:gap-4"
+                  >
+                    <div
+                      class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#1a1200] text-[#f6ae20] flex items-center justify-center shrink-0 shadow-sm mt-0.5"
+                    >
+                      <svg
+                        class="w-5 h-5 sm:w-6 sm:h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h4
+                        class="text-[15px] sm:text-[17px] font-extrabold text-[#1a1200] mb-1"
+                      >
+                        مجتمع حصري للمشتركين
+                      </h4>
+                      <p
+                        class="text-[13px] sm:text-[15px] md:text-[16px] text-[#2c1d05] font-semibold leading-relaxed"
+                      >
+                        هتنضم لمجتمع حصري للمشتركين في البرنامج، هايكون فيه شخص
+                        متخصص للدعم والرد على الأسئلة وهاتتناقش وتاخد خبرة من
+                        الناس اللي موجودة وتشجعوا بعض على المذاكرة
+                        <span
+                          class="inline-block bg-[#1a1200]/10 px-2 py-0.5 rounded-md text-[#1a1200] font-extrabold text-[12px] sm:text-[14px] mr-1"
+                        >
+                          (مدة الانضمام للمجتمع مدى الحياة مش سنة زي الكورس)
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Item 2: Monthly Live -->
+                  <div
+                    class="bg-white/45 hover:bg-white/65 transition-colors rounded-2xl p-3.5 sm:p-4 md:p-5 border border-white/60 shadow-sm flex items-start gap-3 sm:gap-4"
+                  >
+                    <div
+                      class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#1a1200] text-[#f6ae20] flex items-center justify-center shrink-0 shadow-sm mt-0.5"
+                    >
+                      <svg
+                        class="w-5 h-5 sm:w-6 sm:h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h4
+                        class="text-[15px] sm:text-[17px] font-extrabold text-[#1a1200] mb-1"
+                      >
+                        لايف شهري مباشر
+                      </h4>
+                      <p
+                        class="text-[13px] sm:text-[15px] md:text-[16px] text-[#2c1d05] font-semibold leading-relaxed"
+                      >
+                        لايف شهري مخصص للرد على الأسئلة عشان لو عندك اسئلة
+                        المحاضر يرد عليها وتاخد إجابتها فوراً: حاجة في الكورس
+                        مش فاهمها.. عندك اقتراح عايز تقوله.. وهكذا..
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Item 3: Company Events -->
+                  <div
+                    class="bg-white/45 hover:bg-white/65 transition-colors rounded-2xl p-3.5 sm:p-4 md:p-5 border border-white/60 shadow-sm flex items-start gap-3 sm:gap-4"
+                  >
+                    <div
+                      class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#1a1200] text-[#f6ae20] flex items-center justify-center shrink-0 shadow-sm mt-0.5"
+                    >
+                      <svg
+                        class="w-5 h-5 sm:w-6 sm:h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h4
+                        class="text-[15px] sm:text-[17px] font-extrabold text-[#1a1200] mb-1"
+                      >
+                        إيفنتات مجانية في مقر الشركة
+                      </h4>
+                      <p
+                        class="text-[13px] sm:text-[15px] md:text-[16px] text-[#2c1d05] font-semibold leading-relaxed"
+                      >
+                        إيفنتات في مقر الشركة ودي بتبقى بفلوس ولكن طالما انت من
+                        المشتركين هاتبقى مجانية ولك أولوية الحضور.. الميزة دي
+                        بفلوس لإن بيبقى فيه ناس تقيلة في الإيفنتات دي ودا
+                        بيفتحلك فرص كتير انت ماتتخيلهاش.. فرصة واحدة فقط أو
+                        معلومة كفيلة انها تفتحلك أبواب رزق.. الإيفنتات بتتعمل
+                        في فرع من فروعنا التلاتة
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Item 4: Free Updates -->
+                  <div
+                    class="bg-white/45 hover:bg-white/65 transition-colors rounded-2xl p-3.5 sm:p-4 md:p-5 border border-white/60 shadow-sm flex items-start gap-3 sm:gap-4"
+                  >
+                    <div
+                      class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#1a1200] text-[#f6ae20] flex items-center justify-center shrink-0 shadow-sm mt-0.5"
+                    >
+                      <svg
+                        class="w-5 h-5 sm:w-6 sm:h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h4
+                        class="text-[15px] sm:text-[17px] font-extrabold text-[#1a1200] mb-1"
+                      >
+                        تحديثات مجانية مستمرة
+                      </h4>
+                      <p
+                        class="text-[13px] sm:text-[15px] md:text-[16px] text-[#2c1d05] font-semibold leading-relaxed"
+                      >
+                        أي تحديثات للبرنامج التدريبي هاتاخدها ببلاش بدون ماتدفع
+                        أي فلوس إضافية، يعني اللي هايشترك بعد التحديثات هايدفع
+                        فلوس أكتر منك، وانت هتاخدها مجانا
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── Ticket Perforation Divider ── -->
+              <div
+                class="relative w-full lg:w-0 border-t-2 lg:border-t-0 lg:border-l-2 border-dashed border-black/20 my-0"
+              >
+                <!-- Mobile notch cutouts (left & right on the dashed line) -->
+                <div
+                  class="lg:hidden absolute -left-3.5 -top-3.5 w-7 h-7 rounded-full bg-white shadow-inner z-10"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="lg:hidden absolute -right-3.5 -top-3.5 w-7 h-7 rounded-full bg-white shadow-inner z-10"
+                  aria-hidden="true"
+                ></div>
+                <!-- Desktop notch cutouts (top & bottom on the vertical line) -->
+                <div
+                  class="hidden lg:block mgt-notch-top -translate-x-1/2"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="hidden lg:block mgt-notch-bottom -translate-x-1/2"
+                  aria-hidden="true"
+                ></div>
+              </div>
+
+              <!-- ── Ticket Stub (Bottom on mobile, Left on desktop) ── -->
+              <div
+                class="w-full lg:w-[280px] p-5 sm:p-7 flex flex-col sm:flex-row lg:flex-col items-center justify-between gap-4 text-center bg-black/[0.04]"
+              >
+                <!-- Luxury Seal / Stars -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="text-[#1a1200] text-sm tracking-widest">
+                    ★★★★★
+                  </div>
+                  <span
+                    class="text-[13px] font-black text-[#1a1200] uppercase tracking-wider"
+                    >EXCLUSIVE PASS</span
+                  >
+                  <span class="text-[12px] font-bold text-[#1a1200]/75"
+                    >تذكرة خاصة بمشتركي نبراس</span
+                  >
+                </div>
+
+                <!-- Stylized Barcode -->
+                <div class="flex flex-col items-center w-full max-w-[200px]">
+                  <div
+                    class="flex justify-center items-end gap-1 h-9 w-full opacity-80 border-t border-black/15 pt-2"
+                  >
+                    <span class="w-1 h-full bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-0.5 h-4/5 bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-1.5 h-full bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-0.5 h-3/5 bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-1 h-full bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-2 h-4/5 bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-0.5 h-full bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-1.5 h-3/5 bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-0.5 h-full bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-1 h-4/5 bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-2 h-full bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-0.5 h-3/5 bg-[#1a1200] rounded-sm"></span>
+                    <span class="w-1 h-full bg-[#1a1200] rounded-sm"></span>
+                  </div>
+                  <span
+                    class="text-[10px] font-mono tracking-widest text-[#1a1200]/70 mt-1 font-bold"
+                    >#NEB-2026-LIFETIME</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- ── Value & Pricing Story Block ── -->
