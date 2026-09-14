@@ -22,6 +22,11 @@ AOS.init({
   function cycleStack() {
     stack.classList.add("is-cycling");
 
+    // Clear any inline tilt transforms so CSS transitions take full effect
+    cards.forEach((card) => {
+      card.style.transform = "";
+    });
+
     // Update data-card attributes: 0→back, others shift forward
     cards.forEach((card) => {
       const cur = parseInt(card.dataset.card, 10);
@@ -32,44 +37,49 @@ AOS.init({
     setTimeout(() => stack.classList.remove("is-cycling"), 600);
   }
 
-  // Click to cycle
+  // Click or tap to cycle
   stack.addEventListener("click", cycleStack);
 
   // Auto-cycle every 3.5s
-  const autoTimer = setInterval(cycleStack, 3500);
+  let autoTimer = setInterval(cycleStack, 3500);
 
-  // Pause auto-cycle on hover
+  // Pause auto-cycle on hover or touch interaction
   stack.addEventListener("mouseenter", () => clearInterval(autoTimer));
-
-  // Hover tilt parallax
-  stack.addEventListener("mousemove", (e) => {
-    const rect = stack.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const dx = (e.clientX - cx) / (rect.width / 2);   // -1 to 1
-    const dy = (e.clientY - cy) / (rect.height / 2);  // -1 to 1
-
-    // Apply tilt only to the top card (data-card="0")
-    cards.forEach((card) => {
-      if (card.dataset.card === "0") {
-        card.style.transform = `
-          rotate(${dx * 4}deg)
-          rotateX(${-dy * 4}deg)
-          translateY(0px)
-          scale(1)
-        `;
-      }
-    });
+  stack.addEventListener("touchstart", () => clearInterval(autoTimer), {
+    passive: true,
   });
 
-  stack.addEventListener("mouseleave", () => {
-    // Reset top card to neutral
-    cards.forEach((card) => {
-      if (card.dataset.card === "0") {
-        card.style.transform = "";
-      }
+  // Hover tilt parallax — desktop/mouse only to avoid interfering with mobile touch scroll
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    stack.addEventListener("mousemove", (e) => {
+      const rect = stack.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 2); // -1 to 1
+      const dy = (e.clientY - cy) / (rect.height / 2); // -1 to 1
+
+      // Apply tilt only to the top card (data-card="0")
+      cards.forEach((card) => {
+        if (card.dataset.card === "0") {
+          card.style.transform = `
+            rotate(${dx * 4}deg)
+            rotateX(${-dy * 4}deg)
+            translateY(0px)
+            scale(1)
+          `;
+        }
+      });
     });
-  });
+
+    stack.addEventListener("mouseleave", () => {
+      // Reset top card to neutral
+      cards.forEach((card) => {
+        if (card.dataset.card === "0") {
+          card.style.transform = "";
+        }
+      });
+    });
+  }
 })();
 
 /* ── Smooth scroll for all anchor links ── */

@@ -46,33 +46,54 @@ img {
   will-change: transform;
 }
 
-/* Stacked depth positions (bottom → top) */
+/* Stacked depth positions (bottom → top) — Mobile defaults */
 .hero-card[data-card="3"] {
-  transform: rotate(-9deg) translate(-18px, 14px) scale(0.88);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(-5deg) translate(-8px, 8px) scale(0.92);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   filter: brightness(0.7);
   z-index: 1;
 }
 .hero-card[data-card="2"] {
-  transform: rotate(-5deg) translate(-9px, 8px) scale(0.93);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transform: rotate(-2.5deg) translate(-4px, 5px) scale(0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   filter: brightness(0.8);
   z-index: 2;
 }
 .hero-card[data-card="1"] {
-  transform: rotate(-2deg) translate(-3px, 4px) scale(0.97);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+  transform: rotate(-1deg) translate(-2px, 2px) scale(0.98);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
   filter: brightness(0.9);
   z-index: 3;
 }
 .hero-card[data-card="0"] {
   transform: rotate(0deg) translate(0, 0) scale(1);
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.22),
+    0 16px 48px rgba(0, 0, 0, 0.2),
     0 0 0 3px rgba(23, 130, 133, 0.18);
   filter: brightness(1);
   z-index: 4;
   animation: heroFloat 4s ease-in-out infinite;
+}
+
+/* Tablet & Desktop wider spread */
+@media (min-width: 640px) {
+  .hero-card[data-card="3"] {
+    transform: rotate(-9deg) translate(-18px, 14px) scale(0.88);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .hero-card[data-card="2"] {
+    transform: rotate(-5deg) translate(-9px, 8px) scale(0.93);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  }
+  .hero-card[data-card="1"] {
+    transform: rotate(-2deg) translate(-3px, 4px) scale(0.97);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+  }
+  .hero-card[data-card="0"] {
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.22),
+      0 0 0 3px rgba(23, 130, 133, 0.18);
+  }
 }
 
 /* Subtle floating animation on the top card */
@@ -84,6 +105,12 @@ img {
   50% {
     transform: rotate(0deg) translateY(-8px) scale(1);
   }
+}
+
+/* Stack container touch optimization */
+#hero-photo-stack {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* When stack is being clicked — pause float, show click feedback */
