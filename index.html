@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="دليلك الأقوى في سنة 2026 عشان تتعلم أساسيات البرمجة في 30 يوم"
+      content="دليلك الأقوى في سنة 2026 عشان تتعلم أساسيات البرمجة وال Ai في 30 يوم"
     />
 
     <!-- Cairo Font -->
@@ -194,7 +194,7 @@
             id="hero-title"
             class="text-[clamp(1.6rem,4vw,2.5rem)] font-bold text-primary leading-[1.45] mb-[10px]"
           >
-            دليلك الأقوى في سنة 2026 عشان تتعلم أساسيات البرمجة في
+            دليلك الأقوى في سنة 2026 عشان تتعلم أساسيات البرمجة وال Ai في
             <span class="text-secondary">30 يوم</span>
           </h1>
 
@@ -483,7 +483,7 @@
           <!-- Hero Image Stack -->
           <div
             id="hero-stack-wrapper"
-            class="flex justify-center mb-[72px]"
+            class="flex flex-col items-center mb-[72px]"
             data-aos="fade-up"
             data-aos-duration="900"
             data-aos-delay="250"
@@ -548,28 +548,32 @@
                   decoding="async"
                 />
               </div>
+            </div>
 
-              <!-- Tap hint -->
-              <div
-                class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1.5 text-[13px] text-brand/50 font-semibold whitespace-nowrap pointer-events-none"
+            <!-- Tap hint button (moved below the stack for full visibility) -->
+            <button
+              type="button"
+              id="stack-tap-hint-btn"
+              class="mt-8 sm:mt-10 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-[#E7E4E4] text-brand hover:text-primary hover:border-primary/50 text-[13px] sm:text-[14px] font-bold shadow-sm cursor-pointer select-none transition-all duration-300 hover:shadow-md"
+              onclick="document.getElementById('hero-photo-stack')?.click()"
+              aria-label="اضغط للتصفح"
+            >
+              <svg
+                class="w-4 h-4 text-secondary animate-bounce"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
                 aria-hidden="true"
               >
-                <svg
-                  class="w-4 h-4 animate-bounce"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"
-                  />
-                </svg>
-                اضغط للتصفح
-              </div>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"
+                />
+              </svg>
+              <span>اضغط للتصفح</span>
+            </button>
           </div>
 
           <!-- CTA Button -->
@@ -661,7 +665,7 @@
                 data-aos-duration="700"
                 data-aos-delay="200"
               >
-                مين المهندس مصطفى محفوظ؟
+                مين مصطفى محفوظ؟
               </h3>
 
               <!-- Description -->
@@ -671,8 +675,8 @@
                 data-aos-duration="700"
                 data-aos-delay="250"
               >
-                انا مهندس مصطفى محفوظ، بقالي 10 سنين شغال في البرمجة. حالياً
-                صاحب شركة برمجيات ليها 3 فروع وشغال فيها اكتر من 50 موظف.
+                انا مصطفى محفوظ، بقالي 10 سنين شغال في البرمجة. حالياً صاحب شركة
+                برمجيات ليها 3 فروع وشغال فيها اكتر من 50 موظف.
               </p>
 
               <!-- Stat Cards -->
@@ -2000,8 +2004,8 @@
                         class="text-[13px] sm:text-[15px] md:text-[16px] text-[#2c1d05] font-semibold leading-relaxed"
                       >
                         لايف شهري مخصص للرد على الأسئلة عشان لو عندك اسئلة
-                        المحاضر يرد عليها وتاخد إجابتها فوراً: حاجة في الكورس
-                        مش فاهمها.. عندك اقتراح عايز تقوله.. وهكذا..
+                        المحاضر يرد عليها وتاخد إجابتها فوراً: حاجة في الكورس مش
+                        فاهمها.. عندك اقتراح عايز تقوله.. وهكذا..
                       </p>
                     </div>
                   </div>
@@ -2041,8 +2045,8 @@
                         المشتركين هاتبقى مجانية ولك أولوية الحضور.. الميزة دي
                         بفلوس لإن بيبقى فيه ناس تقيلة في الإيفنتات دي ودا
                         بيفتحلك فرص كتير انت ماتتخيلهاش.. فرصة واحدة فقط أو
-                        معلومة كفيلة انها تفتحلك أبواب رزق.. الإيفنتات بتتعمل
-                        في فرع من فروعنا التلاتة
+                        معلومة كفيلة انها تفتحلك أبواب رزق.. الإيفنتات بتتعمل في
+                        فرع من فروعنا التلاتة
                       </p>
                     </div>
                   </div>
@@ -2159,37 +2163,151 @@
 
           <!-- ── Value & Pricing Story Block ── -->
           <div
-            class="bg-primary rounded-[24px] p-6 md:p-12 text-white mt-[52px] shadow-sm"
+            class="relative rounded-[28px] sm:rounded-[36px] bg-gradient-to-br from-[#0e4e52] via-[#16676b] to-[#0c3e41] border border-[#2dd4bf]/25 p-6 sm:p-10 md:p-12 text-white mt-[52px] shadow-[0_20px_50px_rgba(15,76,79,0.25)] overflow-hidden text-right"
             data-aos="fade-up"
             data-aos-duration="700"
           >
-            <h3
-              class="text-secondary text-[32px] md:text-[40px] font-bold mb-6 text-right"
-            >
-              تفتكر كل دا قيمته كام؟
-            </h3>
+            <!-- Background Ambient Glows -->
             <div
-              class="flex flex-col gap-6 text-[16px] md:text-[22px] font-bold leading-loose text-right"
+              class="absolute -top-28 -right-28 w-80 h-80 bg-secondary/15 rounded-full blur-3xl pointer-events-none"
+              aria-hidden="true"
+            ></div>
+            <div
+              class="absolute -bottom-28 -left-28 w-80 h-80 bg-[#2dd4bf]/15 rounded-full blur-3xl pointer-events-none"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Header of Block -->
+            <div
+              class="relative z-10 flex flex-col items-start gap-3 mb-8 md:mb-10 text-right"
             >
-              <p>
-                لما فكرنا في تسعير البرنامج التدريبي + الجولدن تيكت لقينا إن فيه
-                حاجات هاتخلي البرنامج يبقى غالي جداً زي الإيفنتات وإننا لو
-                عملناه
-                <span class="text-secondary font-extrabold"
-                  >بسعر 7000 آلاف جنيه</span
+              <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/25 border border-white/15 text-[#ffd566] text-[12px] sm:text-[14px] font-bold"
+              >
+                <svg
+                  class="w-4 h-4 text-secondary"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
                 >
-                هايكون سعر مناسب ولكن ناس كتير مش هاتقدر تشتري خصوصا إنهم لسة
-                بيبدأوا في المجال..
-              </p>
-              <p>
-                فقررنا إنه يكون بسعر مناسب أكتر من كدا
-                <span class="text-secondary font-extrabold"
-                  >وهايبقى بـ 2800 جنيه</span
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                شفافية التسعير والقيمة الحقيقية
+              </div>
+              <h3
+                class="text-[28px] sm:text-[36px] md:text-[42px] font-black text-white leading-tight"
+              >
+                تفتكر كل دا قيمته كام؟
+              </h3>
+            </div>
+
+            <!-- 2-Card Direct Comparison Grid -->
+            <div
+              class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
+            >
+              <!-- ── Card 1: Initial Pricing (7000 EGP) ── -->
+              <div
+                class="relative bg-white/[0.06] hover:bg-white/[0.09] transition-all border border-white/15 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col backdrop-blur-sm shadow-md"
+              >
+                <!-- Card Header: Title & Price -->
+                <div
+                  class="flex items-center justify-between gap-3 border-b border-white/10 pb-5 mb-5"
                 >
-                بحيث إنك تقدر تشترك بدون ما المبلغ يبقى كبير بالنسبالك وتعتبره
-                أكنها فلوس سفرية مصيف لمدة يومين تلاتة بس الفرق إنك هنا
-                بتستثمرهم في نفسك عشان تكسب أكتر قدام.. فلوس بتجيب فلوس أكتر
-              </p>
+                  <div class="flex flex-col gap-1">
+                    <span class="text-white/60 text-xs sm:text-sm font-bold">
+                      المرحلة الأولى: التسعير المقترح
+                    </span>
+                    <span class="text-white/40 text-[11px] sm:text-xs">
+                      بناءً على التكلفة الفعلية والإيفنتات
+                    </span>
+                  </div>
+                  <div class="text-left shrink-0">
+                    <span class="text-white/40 text-[11px] block font-semibold">
+                      السعر الأولي
+                    </span>
+                    <span
+                      class="text-rose-300 line-through text-2xl sm:text-3xl font-black decoration-rose-500 decoration-2"
+                    >
+                      7,000
+                      <span class="text-sm font-medium text-white/50">ج.م</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Narrative Text -->
+                <p
+                  class="text-white/85 text-[15px] sm:text-[17px] font-medium leading-relaxed"
+                >
+                  لما فكرنا في تسعير البرنامج التدريبي + الجولدن تيكت لقينا إن
+                  فيه حاجات هاتخلي البرنامج يبقى غالي جداً زي الإيفنتات وإننا لو
+                  عملناه
+                  <span
+                    class="text-white font-extrabold underline decoration-rose-400 decoration-2 mx-1"
+                    >بسعر 7000 آلاف جنيه</span
+                  >
+                  هايكون سعر مناسب ولكن ناس كتير مش هاتقدر تشتري خصوصا إنهم لسة
+                  بيبدأوا في المجال..
+                </p>
+              </div>
+
+              <!-- ── Card 2: Final Decision (2800 EGP) ── -->
+              <div
+                class="relative bg-gradient-to-b from-white/15 to-white/[0.06] border-2 border-secondary rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col backdrop-blur-sm shadow-[0_0_35px_rgba(246,174,32,0.18)]"
+              >
+                <!-- Floating Discount Ribbon -->
+                <div
+                  class="absolute -top-3.5 left-6 bg-gradient-to-r from-secondary to-[#e5950a] text-[#1a1200] font-black text-[11px] sm:text-[12px] px-3.5 py-1 rounded-full shadow-md uppercase tracking-wide"
+                >
+                  وفر 4,200 ج.م (خصم 60%)
+                </div>
+
+                <!-- Card Header: Title & Price -->
+                <div
+                  class="flex items-center justify-between gap-3 border-b border-white/10 pb-5 mb-5 pt-1"
+                >
+                  <div class="flex flex-col gap-1">
+                    <span class="text-secondary text-xs sm:text-sm font-black">
+                      المرحلة الثانية: القرار النهائي لدعمك
+                    </span>
+                    <span class="text-white/75 text-[11px] sm:text-xs">
+                      استثمار في متناول الجميع
+                    </span>
+                  </div>
+                  <div class="text-left shrink-0">
+                    <span
+                      class="text-secondary/80 text-[11px] block font-extrabold"
+                    >
+                      السعر المعتمد
+                    </span>
+                    <div class="flex items-baseline gap-1">
+                      <span
+                        class="text-secondary text-3xl sm:text-4xl font-black leading-none drop-shadow-[0_2px_12px_rgba(246,174,32,0.35)]"
+                      >
+                        2,800
+                      </span>
+                      <span class="text-white text-sm sm:text-base font-bold">
+                        ج.م
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Narrative Text -->
+                <p
+                  class="text-white text-[15px] sm:text-[17px] font-medium leading-relaxed"
+                >
+                  فقررنا إنه يكون بسعر مناسب أكتر من كدا
+                  <span
+                    class="text-secondary font-black text-[17px] sm:text-[19px] mx-1"
+                    >وهايبقى بـ 2800 جنيه</span
+                  >
+                  بحيث إنك تقدر تشترك بدون ما المبلغ يبقى كبير بالنسبالك وتعتبره
+                  أكنها فلوس سفرية مصيف لمدة يومين تلاتة بس الفرق إنك هنا
+                  بتستثمرهم في نفسك عشان تكسب أكتر قدام.. فلوس بتجيب فلوس أكتر
+                </p>
+              </div>
             </div>
           </div>
 
